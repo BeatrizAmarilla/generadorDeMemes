@@ -21,11 +21,16 @@ $("#color").addEventListener("input", (e) =>{
 $("#color").addEventListener("input", (e) =>{
     $(".paragraphColorBottom").style.color = e.target.value
 })
+//fondo texto superior
 
+$("#fondo").addEventListener("input", (e) =>{
+    $(".main__topText").style.backgroundColor = e.target.value
+})
 
-
-
-
+//fondo texto inferior
+$("#fondo").addEventListener("input", (e) =>{
+    $(".main__bottomText").style.backgroundColor = e.target.value
+})
 
 
 
