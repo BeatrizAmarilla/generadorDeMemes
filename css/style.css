@@ -51,15 +51,15 @@
   
 }
 
-.main__topText{
+.mainTopText{
     background-color: aliceblue;
 }
 
-.main__bottomText{
+.mainBottomText{
     background-color: aliceblue;
 }
 
-.main__imagen{
+.mainImagen{
     background-color: black;
     height: 300px;
 }

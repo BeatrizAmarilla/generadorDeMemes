@@ -4,7 +4,13 @@ const $ = (selector) => document.querySelector(selector)
 
 
 // funciones 
+//panel imagen
+$("#fondoImagen").addEventListener("input", (e) =>{
+    $(".mainImagen").style.backgroundColor = e.target.value
+})
+
 //panel texto
+
 // texto superior
 $("#topText").addEventListener("input", (e) =>{
      $(".paragraphTop").innerText = e.target.value  
@@ -23,13 +29,13 @@ $("#color").addEventListener("input", (e) =>{
 })
 //fondo texto superior
 
-$("#fondo").addEventListener("input", (e) =>{
-    $(".main__topText").style.backgroundColor = e.target.value
+$("#fondoTexto").addEventListener("input", (e) =>{
+    $(".mainTopText").style.backgroundColor = e.target.value
 })
 
 //fondo texto inferior
-$("#fondo").addEventListener("input", (e) =>{
-    $(".main__bottomText").style.backgroundColor = e.target.value
+$("#fondoTexto").addEventListener("input", (e) =>{
+    $(".mainBottomText").style.backgroundColor = e.target.value
 })
 
 
