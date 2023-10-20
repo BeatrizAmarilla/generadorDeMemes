@@ -13,10 +13,10 @@ $("#url").addEventListener("input", (e) =>{
 $("#fondoImagen").addEventListener("input", (e) =>{
     $(".mainImagen").style.backgroundColor = e.target.value
 })
-//select mix-blend-mode
-$("#mixFilters").addEventListener("input",(e) => {
-    $(".mainImagen").style.mixBlendMode = e.target.value
-})
+// //select mix-blend-mode
+// $("#mixFilters").addEventListener("input",(e) => {
+//     $(".mainImagen").style.mixBlendMode= e.target.value
+// })
 
 // filtros
 const filtersMainImage = () => {
@@ -92,10 +92,17 @@ $("#font").addEventListener("input",(e) => {
 $("#font").addEventListener("input",(e) => {
     $(".paragraphBottom").style.fontFamily = e.target.value
 })
+$("#textAlingLeft").addEventListener("click",() => {
+    $(".main_textos").style.textAlign = "left"
+})
 
+$("#textAlingCenter").addEventListener("click",() => {
+    $(".main_textos").style.textAlign = "center"
+})
 
-
-
+$("#textAlingRight").addEventListener("click",() => {
+    $(".main_textos").style.textAlign = "right"
+})
 
 
 
