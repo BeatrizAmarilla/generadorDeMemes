@@ -1,9 +1,9 @@
 // variables
-const $ = (selector) => document.querySelector(selector)
 
 
 
 // funciones 
+const $ = (selector) => document.querySelector(selector)
 //panel imagen
 //url
 $("#url").addEventListener("input", (e) =>{
@@ -13,6 +13,11 @@ $("#url").addEventListener("input", (e) =>{
 $("#fondoImagen").addEventListener("input", (e) =>{
     $(".mainImagen").style.backgroundColor = e.target.value
 })
+//select mix-blend-mode
+$("#mixFilters").addEventListener("input",(e) => {
+    $(".mainImagen").style.mixBlendMode = e.target.value
+})
+
 // filtros
 const filtersMainImage = () => {
     $(".mainImagen").style.filter =`brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) 
@@ -79,7 +84,7 @@ $("#fondoTexto").addEventListener("input", (e) =>{
 $("#fondoTexto").addEventListener("input", (e) =>{
     $(".mainBottomText").style.backgroundColor = e.target.value
 })
-
+//fuentes
 $("#font").addEventListener("input",(e) => {
     $(".paragraphTop").style.fontFamily = e.target.value
 })
