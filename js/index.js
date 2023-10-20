@@ -14,67 +14,42 @@ $("#fondoImagen").addEventListener("input", (e) =>{
     $(".mainImagen").style.backgroundColor = e.target.value
 })
 // filtros
-$("#brightness").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `brightness(${e.target.value})`
-})
+const filtersMainImage = () => {
+    $(".mainImagen").style.filter =`brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) 
+    contrast(${$("#contrast").value}%) blur(${$("#blur").value}px) grayscale(${$("#grayscale").value}%) 
+    sepia(${$("#sepia").value}%) hue-rotation(${$("#hue-rotation").value}deg) saturation(${$("#saturation").value}%)
+    invert(${$("#invert").value})`
+}
+$("#brightness").addEventListener("input",filtersMainImage)
 
-$("#opacity").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `opacity(${e.target.value})`
-})
+$("#opacity").addEventListener("input",filtersMainImage)
 
-$("#contrast").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `contrast(${e.target.value}%)`
-})
-
-$("#blur").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `blur(${e.target.value}px)`
-})
-
-$("#grayscale").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `grayscale(${e.target.value}%)`
-})
-
-$("#sepia").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `sepia(${e.target.value}%)`
-})
-
-
-$("#hue-rotation").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `hue-rotation(${e.target.value}deg)`
-})
-
-$("#saturation").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `saturation(${e.target.value}%)`
-})
-
-$("#invert").addEventListener("input", (e) =>{
-    $(".mainImagen").style.filter = `invert(${e.target.value})`
-})
-
-// const filtersMainImage = () => {
-//     $(".mainImagen").style.filter =`brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) 
-//     contrast(${$("#contrast").value}%) blur(${$("#blur").value}px) grayscale(${$("#grayscale").value}%) 
-//     sepia(${$("#sepia").value}%) hue-rotation(${$("#hue-rotation").value}deg) saturation(${$("#saturation").value}%)
-//     invert(${$("#invert").value})`
-// }
-// $("#brightness").addEventListener("input",filtersMainImage)
-
-// $("#opacity").addEventListener("input",filtersMainImage)
-
-// $("#contrast").addEventListener("input",filtersMainImage)
+$("#contrast").addEventListener("input",filtersMainImage)
    
-// $("#blur").addEventListener("input",filtersMainImage)
+$("#blur").addEventListener("input",filtersMainImage)
 
-// $("#grayscale").addEventListener("input",filtersMainImage)
+$("#grayscale").addEventListener("input",filtersMainImage)
 
-// $("#sepia").addEventListener("input",filtersMainImage)
+$("#sepia").addEventListener("input",filtersMainImage)
 
-// $("#hue-rotation").addEventListener("input",filtersMainImage)
+$("#hue-rotation").addEventListener("input",filtersMainImage)
 
-// $("#saturation").addEventListener("input",filtersMainImage)
+$("#saturation").addEventListener("input",filtersMainImage)
 
-// $("#invert").addEventListener("input",filtersMainImage)
-
+$("#invert").addEventListener("input",filtersMainImage)
+//boton reseteo de filtros
+$("#resetFilters").addEventListener("click",() => {
+    $("#brightness").value = "1"
+    $("#opacity").value = "1"
+    $("#contrast").value = "100"
+    $("#blur").value = "0"
+    $("#grayscale").value = "0"
+    $("#sepia").value = "0"
+    $("#hue-rotation").value = "0"
+    $("#saturation").value = "100"
+    $("#invert").value = "1"
+    $(".mainImagen").style.filter = "none"
+})
 
 //panel texto
 
@@ -104,6 +79,20 @@ $("#fondoTexto").addEventListener("input", (e) =>{
 $("#fondoTexto").addEventListener("input", (e) =>{
     $(".mainBottomText").style.backgroundColor = e.target.value
 })
+
+$("#font").addEventListener("input",(e) => {
+    $(".paragraphTop").style.fontFamily = e.target.value
+})
+
+$("#font").addEventListener("input",(e) => {
+    $(".paragraphBottom").style.fontFamily = e.target.value
+})
+
+
+
+
+
+
 
 
 
