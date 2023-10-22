@@ -114,34 +114,35 @@
 
     .asideImagen{
         background-color: gray;
-        width: 400%;
-        height: 400px;
+        width: 30%;
+        height: 600px;
         display: none;
-        position: static;
+        position: absolute;
         z-index: 1;
         overflow: auto;
         top: 0;
         right: 0;
+        padding: 5px;
+        font-size: 15px;
         
        }
        
        
        .asideTexto{
-           background-color: gray;
-           width: 400%;
-           height: 400px;
-           display: none;
-           position: static;
-           z-index: 1;
-           overflow: auto;
-           top: 0;
-           right: 0;
-           
-          }
-
-
-
-
+        background-color: gray;
+        width: 30%;
+        height: 600px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        overflow: auto;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        font-size: 15px;
+        
+       }
+    
    }
 
 
