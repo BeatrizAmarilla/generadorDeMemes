@@ -14,8 +14,8 @@
     <header class="header">
         <h1 class="header_titulo">Generador de Memes</h1>
         <div class="header_button">
-            <button class="header__boton"><img width="16" height="16" src="https://img.icons8.com/tiny-glyph/16/image.png" alt="image"/>Imagen</button>
-            <button class="header__boton"><img width="16" height="16" src="https://img.icons8.com/tiny-glyph/16/xbox-a.png" alt="xbox-a"/>texto</button>
+            <button class="header__boton" id="buttonImage"><img width="16" height="16" src="https://img.icons8.com/tiny-glyph/16/image.png" alt="image"/>Imagen</button>
+            <button class="header__boton" id="buttonTexto"><img width="16" height="16" src="https://img.icons8.com/tiny-glyph/16/xbox-a.png" alt="xbox-a"/>texto</button>
             <button class="header__boton"><img width="16" height="16" src="https://img.icons8.com/sf-ultralight-filled/16/light.png" alt="light"/>Modo claro</button>
             <!-- <button>Modo oscuro</button> -->
         </div>
@@ -29,11 +29,13 @@
         </div>
         <button class="main_button" id="download"><img width="16" height="16" src="https://img.icons8.com/material-two-tone/16/download--v1.png" alt="download--v1"/>DESCARGAR MEME</button>
     </main>
+    <aside class="asideImagen" id="asideImagen">
+    <button class="buttonClosePanel" id="buttonClosePanel">&times;</button>
     <!-- panel imagen -->
     <h2>IMAGEN</h2>
     <!-- url de imagen -->
     <h3>URL</h3>
-    <input type="text" name="url" id="url">
+    <input type="text" name="url" id="urlImage">
     <!-- fondo de imagen -->
     <h3>FONDO</h3>
     <input type="color" name="fondo" id="fondoImagen">
@@ -84,7 +86,8 @@
     <input type="range" name="invert" id="invert" min="0" max="1"  step="0.1" value="1">
     </div>
     <button id="resetFilters">Reset Filtros</button>
-
+    </aside>
+    <aside class="asideTexto" id="asideTexto">
     <!-- panel texto -->
     <h2>TEXTO</h2>
     <h3>SUPERIOR</h3>
@@ -123,9 +126,10 @@
     <button id="outlineLight">CLARO</button>
     <button id="outlineDark">OSCURO</button>
     <h3>ESPACIADO</h3>
-    <input type="number" name="number"  id="SPACING" min="10" max="50" value="35">
-
-
+    <input type="number" name="number"  id="spacing" min="10" max="50" value="35">
+    <h3>INTERLINEADO</h3>
+    <input type="number" name="number"  id="spacing" min="10" max="50" value="35">
+    </aside>
 
     <script src="./js/index.js"></script>
 </body>

@@ -4,9 +4,10 @@
 
 // funciones 
 const $ = (selector) => document.querySelector(selector)
+//eventos
 //panel imagen
 //url
-$("#url").addEventListener("input", (e) =>{
+$("#urlImage").addEventListener("input", (e) =>{
     $(".mainImagen").style.backgroundImage = `url(${e.target.value})`  
 })
 //fondo de imagen
@@ -174,10 +175,25 @@ $("#fondoTransparente").addEventListener("input",(e) => {
   }
 })
 
-//espaciado
-// $("#SPACING").addEventListener("input",(e) => {
-//   $(".mainTopText").style.padding = `${e.targe.value}px`
+// //espaciado
+// $("#spacing").addEventListener("input",(e) => {
+//   $(".paragraphTop").style.padding = `${e.targe.value}px 30 px`
 // })
+//boton imagen
+
+$("#buttonImage").addEventListener("click",(e) => {
+  $(".asideImagen").style.display = "block" 
+  
+})
+
+//boton texto
+$("#buttonTexto").addEventListener("click",(e) => {
+  $(".asideTexto").style.display = "block" 
+  
+})
+
+
+
 
 //boton de descarga
 
@@ -190,7 +206,33 @@ const downloadImage = () =>{
 
 $("#download").addEventListener("click",downloadImage)
 
+//funcion carga inicial
+// const initializeProject = () => {
+//   // EVENTOS
+//   $("#download").addEventListener("click", downloadMeme)
 
+//   $("input").addEventListener("input", () => {
+//       // bloque de codigo
+//   })
+
+//   $("input").addEventListener("input", () => {
+//       // bloque de codigo
+//   })
+
+//   $("input").addEventListener("input", () => {
+//       // bloque de codigo
+//   })
+
+//   $("input").addEventListener("input", () => {
+//       // bloque de codigo
+//   })
+
+//   $("input").addEventListener("input", () => {
+//       // bloque de codigo
+//   })
+// }
+
+// window.addEventListener("load", initializeProject)
 
 
 
