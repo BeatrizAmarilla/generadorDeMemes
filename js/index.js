@@ -203,8 +203,14 @@ $("#buttonClosePanelText").addEventListener("click",(e) => {
   
 })
 
+//toogle de paneles en mq 768px
+$(".buttonImage").addEventListener("click", () => {
+  $(".asideTexto").classList.toggle("asideImagen")
+})
 
-
+$(".buttonImage").addEventListener("click", () => {
+  $(".asideTexto").style.display = "none" 
+})
 
 
 
