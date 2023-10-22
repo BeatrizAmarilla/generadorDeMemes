@@ -44,11 +44,10 @@
 }
   
 .main_textos{
-    border: black 5px solid;
     display: block;
     justify-content: center;
     text-align: center;
-  
+ 
 }
 
 .mainTopText{

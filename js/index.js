@@ -14,9 +14,9 @@ $("#fondoImagen").addEventListener("input", (e) =>{
     $(".mainImagen").style.backgroundColor = e.target.value
 })
 // //select mix-blend-mode
-// $("#mixFilters").addEventListener("input",(e) => {
-//     $(".mainImagen").style.mixBlendMode= e.target.value
-// })
+$("#mixFilters").addEventListener("input",(e) => {
+    $(".mainImagen").style.backgroundBlendMode= e.target.value
+})
 
 // filtros
 const filtersMainImage = () => {
@@ -129,4 +129,51 @@ $("#outlineDark").addEventListener("click",() => {
 $("#outlineDark").addEventListener("click",() => {
     $(".paragraphBottom").style.webkitTextStroke = "1px black"
 })
+
+//tamano de fuente
+// $("#number").addEventListener("input",(e) => {
+//     $(".paragraphTop").style.fontSize = `${e.targe.value}px`
+// })
+
+
+// $("#number").addEventListener("input",(e) => {
+//     $(".paragraphBottom").style.fontSize = `${e.targe.value}px`
+// })
+
+//sin texto superior y sin texto inferior
+
+$("#sinTextoSuperior").addEventListener("input",(e) => {
+  if (e.target.checked){
+    $(".paragraphTop").style.display = "none"
+  }else{
+    $(".paragraphTop").style.display = "block"
+  }
+})
+
+$("#sinTextoInferior").addEventListener("input",(e) => {
+    if (e.target.checked){
+      $(".paragraphBottom").style.display = "none"
+    }else{
+      $(".paragraphBottom").style.display = "block"
+    }
+  })
+  //fondo transparente
+$("#fondoTransparente").addEventListener("input",(e) => {
+    if (e.target.checked){
+      $(".mainTopText").style.backgroundColor = "transparent" 
+    }else{
+       $(".mainTopText").style.backgroundColor= "white"
+    }
+  })
+
+  $("#fondoTransparente").addEventListener("input",(e) => {
+    if (e.target.checked){
+      $(".mainBottomText").style.backgroundColor = "transparent" 
+    }else{
+       $(".mainBottomText").style.backgroundColor= "white"
+    }
+  })
+
+
+
 
