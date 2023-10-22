@@ -104,7 +104,29 @@ $("#textAlingRight").addEventListener("click",() => {
     $(".main_textos").style.textAlign = "right"
 })
 
+// contorno de texto
 
+$("#outlineNone").addEventListener("click",() => {
+    $(".paragraphTop").style.webkitTextStroke = "0px"
+})
 
+$("#outlineNone").addEventListener("click",() => {
+    $(".paragraphBottom").style.webkitTextStroke = "0px"
+})
 
+$("#outlineLight").addEventListener("click",() => {
+    $(".paragraphTop").style.webkitTextStroke = "1px white"
+})
+
+$("#outlineLight").addEventListener("click",() => {
+    $(".paragraphBottom").style.webkitTextStroke = "1px white"
+})
+
+$("#outlineDark").addEventListener("click",() => {
+    $(".paragraphTop").style.webkitTextStroke = "1px black"
+})
+
+$("#outlineDark").addEventListener("click",() => {
+    $(".paragraphBottom").style.webkitTextStroke = "1px black"
+})
 
