@@ -191,6 +191,20 @@ $("#buttonTexto").addEventListener("click",(e) => {
   $(".asideTexto").style.display = "block" 
   
 })
+//boton de cierre de paneles imagen y texto
+$("#buttonClosePanelImage").addEventListener("click",(e) => {
+  $(".asideImagen").style.display = "none" 
+  
+})
+
+
+$("#buttonClosePanelText").addEventListener("click",(e) => {
+  $(".asideTexto").style.display = "none" 
+  
+})
+
+
+
 
 
 
