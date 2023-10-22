@@ -151,28 +151,45 @@ $("#sinTextoSuperior").addEventListener("input",(e) => {
 })
 
 $("#sinTextoInferior").addEventListener("input",(e) => {
-    if (e.target.checked){
-      $(".paragraphBottom").style.display = "none"
-    }else{
-      $(".paragraphBottom").style.display = "block"
-    }
-  })
+  if (e.target.checked){
+    $(".paragraphBottom").style.display = "none"
+  }else{
+    $(".paragraphBottom").style.display = "block"
+  }
+})
   //fondo transparente
 $("#fondoTransparente").addEventListener("input",(e) => {
-    if (e.target.checked){
-      $(".mainTopText").style.backgroundColor = "transparent" 
-    }else{
-       $(".mainTopText").style.backgroundColor= "white"
-    }
-  })
+  if (e.target.checked){
+    $(".mainTopText").style.backgroundColor = "transparent" 
+  }else{
+    $(".mainTopText").style.backgroundColor= "white"
+  }
+})
 
-  $("#fondoTransparente").addEventListener("input",(e) => {
-    if (e.target.checked){
-      $(".mainBottomText").style.backgroundColor = "transparent" 
-    }else{
-       $(".mainBottomText").style.backgroundColor= "white"
-    }
+$("#fondoTransparente").addEventListener("input",(e) => {
+  if (e.target.checked){
+    $(".mainBottomText").style.backgroundColor = "transparent" 
+  }else{
+    $(".mainBottomText").style.backgroundColor= "white"
+  }
+})
+
+//espaciado
+// $("#SPACING").addEventListener("input",(e) => {
+//   $(".mainTopText").style.padding = `${e.targe.value}px`
+// })
+
+//boton de descarga
+
+const downloadImage = () =>{
+  domtoimage.toBlob($(".main")).then((blob) => {
+    saveAs(blob, "my-meme.png")
   })
+}
+
+
+$("#download").addEventListener("click",downloadImage)
+
 
 
 
