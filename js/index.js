@@ -182,9 +182,22 @@ $("#fondoTransparente").addEventListener("input", (e) => {
 
 //espaciado
 $("#numberSpacing").addEventListener("input",(e) => {
-  $(".main_textos").style.lineHeight = e.targe.value
+  $(".paragraphTop").style.padding =  e.target.value + "px"
 })
 
+$("#numberSpacing").addEventListener("input",(e) => {
+  $(".paragraphBottom").style.padding =  e.target.value + "px"
+})
+
+
+// //interlineado
+$("#interlineadoTexto").addEventListener("input", (e) => {
+  $(".paragraphTop").style.lineHeight = e.target.value 
+})
+
+$("#interlineadoTexto").addEventListener("input", (e) => {
+  $(".paragraphBottom").style.lineHeight = e.target.value
+})
 
 //boton imagen
 
