@@ -7,200 +7,207 @@ const $ = (selector) => document.querySelector(selector)
 //eventos
 //panel imagen
 //url
-$("#urlImage").addEventListener("input", (e) =>{
-    $(".mainImagen").style.backgroundImage = `url(${e.target.value})`  
+$("#urlImage").addEventListener("input", (e) => {
+  $(".mainImagen").style.backgroundImage = `url(${e.target.value})`
 })
 //fondo de imagen
-$("#fondoImagen").addEventListener("input", (e) =>{
-    $(".mainImagen").style.backgroundColor = e.target.value
+$("#fondoImagen").addEventListener("input", (e) => {
+  $(".mainImagen").style.backgroundColor = e.target.value
 })
 // //select mix-blend-mode
-$("#mixFilters").addEventListener("input",(e) => {
-    $(".mainImagen").style.backgroundBlendMode= e.target.value
+$("#mixFilters").addEventListener("input", (e) => {
+  $(".mainImagen").style.backgroundBlendMode = e.target.value
 })
 
 // filtros
 const filtersMainImage = () => {
-    $(".mainImagen").style.filter =`brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) 
-    contrast(${$("#contrast").value}%) blur(${$("#blur").value}px) grayscale(${$("#grayscale").value}%) 
-    sepia(${$("#sepia").value}%) hue-rotation(${$("#hue-rotation").value}deg) saturation(${$("#saturation").value}%)
+  $(".mainImagen").style.filter = 
+   `brightness(${$("#brightness").value}) 
+    opacity(${$("#opacity").value}) 
+    contrast(${$("#contrast").value}%) 
+    blur(${$("#blur").value}px) 
+    grayscale(${$("#grayscale").value}%) 
+    sepia(${$("#sepia").value}%) 
+    hue-rotation(${$("#hue-rotation").value}deg) 
+    saturation(${$("#saturation").value}%)
     invert(${$("#invert").value})`
 }
-$("#brightness").addEventListener("input",filtersMainImage)
+$("#brightness").addEventListener("input", filtersMainImage)
 
-$("#opacity").addEventListener("input",filtersMainImage)
+$("#opacity").addEventListener("input", filtersMainImage)
 
-$("#contrast").addEventListener("input",filtersMainImage)
-   
-$("#blur").addEventListener("input",filtersMainImage)
+$("#contrast").addEventListener("input", filtersMainImage)
 
-$("#grayscale").addEventListener("input",filtersMainImage)
+$("#blur").addEventListener("input", filtersMainImage)
 
-$("#sepia").addEventListener("input",filtersMainImage)
+$("#grayscale").addEventListener("input", filtersMainImage)
 
-$("#hue-rotation").addEventListener("input",filtersMainImage)
+$("#sepia").addEventListener("input", filtersMainImage)
 
-$("#saturation").addEventListener("input",filtersMainImage)
+$("#hue-rotation").addEventListener("input", filtersMainImage)
 
-$("#invert").addEventListener("input",filtersMainImage)
+$("#saturation").addEventListener("input", filtersMainImage)
+
+$("#invert").addEventListener("input", filtersMainImage)
 //boton reseteo de filtros
-$("#resetFilters").addEventListener("click",() => {
-    $("#brightness").value = "1"
-    $("#opacity").value = "1"
-    $("#contrast").value = "100"
-    $("#blur").value = "0"
-    $("#grayscale").value = "0"
-    $("#sepia").value = "0"
-    $("#hue-rotation").value = "0"
-    $("#saturation").value = "100"
-    $("#invert").value = "1"
-    $(".mainImagen").style.filter = "none"
+$("#resetFilters").addEventListener("click", () => {
+  $("#brightness").value = "1"
+  $("#opacity").value = "1"
+  $("#contrast").value = "100"
+  $("#blur").value = "0"
+  $("#grayscale").value = "0"
+  $("#sepia").value = "0"
+  $("#hue-rotation").value = "0"
+  $("#saturation").value = "100"
+  $("#invert").value = "1"
+  $(".mainImagen").style.filter = "none"
 })
 
 //panel texto
 
 // texto superior
-$("#topText").addEventListener("input", (e) =>{
-     $(".paragraphTop").innerText = e.target.value  
+$("#topText").addEventListener("input", (e) => {
+  $(".paragraphTop").innerText = e.target.value
 })
 // texto inferior
-$("#bottomText").addEventListener("input", (e) =>{
-    $(".paragraphBottom").innerText = e.target.value  
+$("#bottomText").addEventListener("input", (e) => {
+  $(".paragraphBottom").innerText = e.target.value
 })
 // color texto superior 
-$("#color").addEventListener("input", (e) =>{
-    $(".paragraphColorTop").style.color = e.target.value
+$("#color").addEventListener("input", (e) => {
+  $(".paragraphColorTop").style.color = e.target.value
 })
 // color texto inferior
-$("#color").addEventListener("input", (e) =>{
-    $(".paragraphColorBottom").style.color = e.target.value
+$("#color").addEventListener("input", (e) => {
+  $(".paragraphColorBottom").style.color = e.target.value
 })
 //fondo texto superior
 
-$("#fondoTexto").addEventListener("input", (e) =>{
-    $(".mainTopText").style.backgroundColor = e.target.value
+$("#fondoTexto").addEventListener("input", (e) => {
+  $(".mainTopText").style.backgroundColor = e.target.value
 })
 
 //fondo texto inferior
-$("#fondoTexto").addEventListener("input", (e) =>{
-    $(".mainBottomText").style.backgroundColor = e.target.value
+$("#fondoTexto").addEventListener("input", (e) => {
+  $(".mainBottomText").style.backgroundColor = e.target.value
 })
 //fuentes
-$("#font").addEventListener("input",(e) => {
-    $(".paragraphTop").style.fontFamily = e.target.value
+$("#font").addEventListener("input", (e) => {
+  $(".paragraphTop").style.fontFamily = e.target.value
 })
 
-$("#font").addEventListener("input",(e) => {
-    $(".paragraphBottom").style.fontFamily = e.target.value
+$("#font").addEventListener("input", (e) => {
+  $(".paragraphBottom").style.fontFamily = e.target.value
 })
-$("#textAlingLeft").addEventListener("click",() => {
-    $(".main_textos").style.textAlign = "left"
-})
-
-$("#textAlingCenter").addEventListener("click",() => {
-    $(".main_textos").style.textAlign = "center"
+$("#textAlingLeft").addEventListener("click", () => {
+  $(".main_textos").style.textAlign = "left"
 })
 
-$("#textAlingRight").addEventListener("click",() => {
-    $(".main_textos").style.textAlign = "right"
+$("#textAlingCenter").addEventListener("click", () => {
+  $(".main_textos").style.textAlign = "center"
+})
+
+$("#textAlingRight").addEventListener("click", () => {
+  $(".main_textos").style.textAlign = "right"
 })
 
 // contorno de texto
 
-$("#outlineNone").addEventListener("click",() => {
-    $(".paragraphTop").style.webkitTextStroke = "0px"
+$("#outlineNone").addEventListener("click", () => {
+  $(".paragraphTop").style.webkitTextStroke = "0px"
 })
 
-$("#outlineNone").addEventListener("click",() => {
-    $(".paragraphBottom").style.webkitTextStroke = "0px"
+$("#outlineNone").addEventListener("click", () => {
+  $(".paragraphBottom").style.webkitTextStroke = "0px"
 })
 
-$("#outlineLight").addEventListener("click",() => {
-    $(".paragraphTop").style.webkitTextStroke = "1px white"
+$("#outlineLight").addEventListener("click", () => {
+  $(".paragraphTop").style.webkitTextStroke = "1px white"
 })
 
-$("#outlineLight").addEventListener("click",() => {
-    $(".paragraphBottom").style.webkitTextStroke = "1px white"
+$("#outlineLight").addEventListener("click", () => {
+  $(".paragraphBottom").style.webkitTextStroke = "1px white"
 })
 
-$("#outlineDark").addEventListener("click",() => {
-    $(".paragraphTop").style.webkitTextStroke = "1px black"
+$("#outlineDark").addEventListener("click", () => {
+  $(".paragraphTop").style.webkitTextStroke = "1px black"
 })
 
-$("#outlineDark").addEventListener("click",() => {
-    $(".paragraphBottom").style.webkitTextStroke = "1px black"
+$("#outlineDark").addEventListener("click", () => {
+  $(".paragraphBottom").style.webkitTextStroke = "1px black"
 })
 
-//tamano de fuente
-// $("#number").addEventListener("input",(e) => {
-//     $(".paragraphTop").style.fontSize = `${e.targe.value}px`
-// })
+//tamano de fuente de texto superior y de texto inferior
+$("#tamanioFuente").addEventListener("input", (e) => {
+    $(".paragraphTop").style.fontSize = e.target.value + "px"
+})
 
-
-// $("#number").addEventListener("input",(e) => {
-//     $(".paragraphBottom").style.fontSize = `${e.targe.value}px`
-// })
+$("#tamanioFuente").addEventListener("input", (e) => {
+  $(".paragraphBottom").style.fontSize = e.target.value + "px"
+})
 
 //sin texto superior y sin texto inferior
 
-$("#sinTextoSuperior").addEventListener("input",(e) => {
-  if (e.target.checked){
+$("#sinTextoSuperior").addEventListener("input", (e) => {
+  if (e.target.checked) {
     $(".paragraphTop").style.display = "none"
-  }else{
+  } else {
     $(".paragraphTop").style.display = "block"
   }
 })
 
-$("#sinTextoInferior").addEventListener("input",(e) => {
-  if (e.target.checked){
+$("#sinTextoInferior").addEventListener("input", (e) => {
+  if (e.target.checked) {
     $(".paragraphBottom").style.display = "none"
-  }else{
+  } else {
     $(".paragraphBottom").style.display = "block"
   }
 })
-  //fondo transparente
-$("#fondoTransparente").addEventListener("input",(e) => {
-  if (e.target.checked){
-    $(".mainTopText").style.backgroundColor = "transparent" 
-  }else{
-    $(".mainTopText").style.backgroundColor= "white"
+//fondo transparente
+$("#fondoTransparente").addEventListener("input", (e) => {
+  if (e.target.checked) {
+    $(".mainTopText").style.backgroundColor = "transparent"
+  } else {
+    $(".mainTopText").style.backgroundColor = "white"
   }
 })
 
-$("#fondoTransparente").addEventListener("input",(e) => {
-  if (e.target.checked){
-    $(".mainBottomText").style.backgroundColor = "transparent" 
-  }else{
-    $(".mainBottomText").style.backgroundColor= "white"
+$("#fondoTransparente").addEventListener("input", (e) => {
+  if (e.target.checked) {
+    $(".mainBottomText").style.backgroundColor = "transparent"
+  } else {
+    $(".mainBottomText").style.backgroundColor = "white"
   }
 })
 
-// //espaciado
-// $("#spacing").addEventListener("input",(e) => {
-//   $(".paragraphTop").style.padding = `${e.targe.value}px 30 px`
-// })
+//espaciado
+$("#numberSpacing").addEventListener("input",(e) => {
+  $(".main_textos").style.lineHeight = e.targe.value
+})
+
+
 //boton imagen
 
-$("#buttonImage").addEventListener("click",(e) => {
-  $(".asideImagen").style.display = "block" 
-  
+$("#buttonImage").addEventListener("click", (e) => {
+  $(".asideImagen").style.display = "block"
+
 })
 
 //boton texto
-$("#buttonTexto").addEventListener("click",(e) => {
-  $(".asideTexto").style.display = "block" 
-  
+$("#buttonTexto").addEventListener("click", (e) => {
+  $(".asideTexto").style.display = "block"
+
 })
 //boton de cierre de paneles imagen y texto
-$("#buttonClosePanelImage").addEventListener("click",(e) => {
-  $(".asideImagen").style.display = "none" 
-  
+$("#buttonClosePanelImage").addEventListener("click", (e) => {
+  $(".asideImagen").style.display = "none"
+
 })
 
 
-$("#buttonClosePanelText").addEventListener("click",(e) => {
-  $(".asideTexto").style.display = "none" 
-  
+$("#buttonClosePanelText").addEventListener("click", (e) => {
+  $(".asideTexto").style.display = "none"
+
 })
 
 //toogle de paneles en mq 768px
@@ -209,7 +216,7 @@ $(".buttonImage").addEventListener("click", () => {
 })
 
 $(".buttonImage").addEventListener("click", () => {
-  $(".asideTexto").style.display = "none" 
+  $(".asideTexto").style.display = "none"
 })
 
 
@@ -217,14 +224,14 @@ $(".buttonImage").addEventListener("click", () => {
 
 //boton de descarga
 
-const downloadImage = () =>{
+const downloadImage = () => {
   domtoimage.toBlob($(".main")).then((blob) => {
     saveAs(blob, "my-meme.png")
   })
 }
 
 
-$("#download").addEventListener("click",downloadImage)
+$("#download").addEventListener("click", downloadImage)
 
 //funcion carga inicial
 // const initializeProject = () => {
