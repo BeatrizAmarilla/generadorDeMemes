@@ -188,8 +188,6 @@ $("#numberSpacing").addEventListener("input",(e) => {
 $("#numberSpacing").addEventListener("input",(e) => {
   $(".paragraphBottom").style.padding =  e.target.value + "px"
 })
-
-
 // //interlineado
 $("#interlineadoTexto").addEventListener("input", (e) => {
   $(".paragraphTop").style.lineHeight = e.target.value 
