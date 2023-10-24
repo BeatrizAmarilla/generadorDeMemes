@@ -20,35 +20,126 @@ $("#mixFilters").addEventListener("input", (e) => {
 })
 
 // filtros
+let filterValues = {
+  brightness: 1,
+  opacity: 1,
+  contrast: 100,
+  blur: 0,
+  grayscale: 0,
+  sepia: 0,
+  hueRotate: 0,
+  saturation: 1,
+  invert: 0
+};
+
 const filtersMainImage = () => {
-  $(".mainImagen").style.filter = 
-   `brightness(${$("#brightness").value}) 
-    opacity(${$("#opacity").value}) 
-    contrast(${$("#contrast").value}%) 
-    blur(${$("#blur").value}px) 
-    grayscale(${$("#grayscale").value}%) 
-    sepia(${$("#sepia").value}%) 
-    hue-rotation(${$("#hue-rotation").value}deg) 
-    saturation(${$("#saturation").value}%)
-    invert(${$("#invert").value})`
+  const filterString = 
+
+  `brightness(${filterValues.brightness})
+      opacity(${filterValues.opacity})
+      contrast(${filterValues.contrast}%)
+      blur(${filterValues.blur}px)
+      grayscale(${filterValues.grayscale}%)
+      sepia(${filterValues.sepia}%)
+      hue-rotate(${filterValues.hueRotate}deg)
+      saturate(${filterValues.saturation}%)
+      invert(${filterValues.invert})`
+
+$(".mainImagen").style.filter = filterString
+
 }
-$("#brightness").addEventListener("input", filtersMainImage)
 
-$("#opacity").addEventListener("input", filtersMainImage)
 
-$("#contrast").addEventListener("input", filtersMainImage)
+$("#brightness").addEventListener("input", () => {
+  console.log("Control deslizante de brillo cambiado")
+ filtersMainImage()
+})
 
-$("#blur").addEventListener("input", filtersMainImage)
+$("#opacity").addEventListener("input", () => {
+  console.log("Control deslizante de opacidad cambiado")
+   filtersMainImage()
+})
 
-$("#grayscale").addEventListener("input", filtersMainImage)
+$("#contrast").addEventListener("input", () => {
+  console.log("Control deslizante de contraste cambiado")
+   filtersMainImage()
+})
 
-$("#sepia").addEventListener("input", filtersMainImage)
+$("#blur").addEventListener("input", () => {
+  console.log("Control deslizante de desenfoque cambiado")
+   filtersMainImage()
+})
 
-$("#hue-rotation").addEventListener("input", filtersMainImage)
+$("#grayscale").addEventListener("input", () => {
+  console.log("Control deslizante de escala de grises cambiado")
+   filtersMainImage()
+})
 
-$("#saturation").addEventListener("input", filtersMainImage)
+$("#sepia").addEventListener("input", () => {
+  console.log("Control deslizante de sepia cambiado")
+   filtersMainImage()
+})
 
-$("#invert").addEventListener("input", filtersMainImage)
+document.querySelector("#hue-rotate").addEventListener("input", () => {
+  console.log("Control deslizante de hue cambiado")
+   filtersMainImage()
+})
+
+$("#saturation").addEventListener("input", () => {
+  console.log("Control deslizante de saturación cambiado")
+   filtersMainImage()
+})
+
+$("#invert").addEventListener("input", () => {
+  console.log("Control deslizante de negativo cambiado")
+   filtersMainImage()
+})
+
+  $("#brightness").addEventListener("input", (e) => {
+    filterValues.brightness = e.target.value
+      filtersMainImage()
+  })
+
+  $("#opacity").addEventListener("input", (e) => {
+    filterValues.opacity = e.target.value
+      filtersMainImage()
+  })
+
+  $("#contrast").addEventListener("input", (e) => {
+    filterValues .contrast= e.target.value
+    filtersMainImage()
+  })
+
+$("#blur").addEventListener("input", (e) => {
+  filterValues .blur = e.target.value
+  filtersMainImage()
+})
+
+$("#grayscale").addEventListener("input", (e) => {
+  filterValues .grayscale= e.target.value
+  filtersMainImage()
+})
+
+$("#sepia").addEventListener("input", (e) => {
+  filterValues.sepia = e.target.value
+  filtersMainImage()
+})
+
+$("#hue-rotate").addEventListener("input", (e) => {
+  filterValues.hueRotate = e.target.value
+  filtersMainImage()
+})
+
+$("#saturation").addEventListener("input", (e) => {
+  filterValues.saturation = e.target.value
+  filtersMainImage()
+})
+
+$("#invert").addEventListener("input", (e) => {
+  filterValues.invert = e.target.value
+  filtersMainImage()
+})
+
 //boton reseteo de filtros
 $("#resetFilters").addEventListener("click", () => {
   $("#brightness").value = "1"
@@ -57,12 +148,11 @@ $("#resetFilters").addEventListener("click", () => {
   $("#blur").value = "0"
   $("#grayscale").value = "0"
   $("#sepia").value = "0"
-  $("#hue-rotation").value = "0"
+  $("#hue-rotate").value = "0"
   $("#saturation").value = "100"
-  $("#invert").value = "1"
-  $(".mainImagen").style.filter = "none"
+  $("#invert").value = "0"
+  $("#mainImagen").style.filter = "none"
 })
-
 //panel texto
 
 // texto superior
