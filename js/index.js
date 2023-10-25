@@ -1,23 +1,21 @@
 // variables
 
-
-
-// funciones 
-const $ = (selector) => document.querySelector(selector)
+// funciones
+const $ = (selector) => document.querySelector(selector);
 //eventos
 //panel imagen
 //url
 $("#urlImage").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundImage = `url(${e.target.value})`
-})
+  $(".mainImagen").style.backgroundImage = `url(${e.target.value})`;
+});
 //fondo de imagen
 $("#fondoImagen").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundColor = e.target.value
-})
+  $(".mainImagen").style.backgroundColor = e.target.value;
+});
 // //select mix-blend-mode
 $("#mixFilters").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundBlendMode = e.target.value
-})
+  $(".mainImagen").style.backgroundBlendMode = e.target.value;
+});
 
 // filtros
 let filterValues = {
@@ -29,13 +27,11 @@ let filterValues = {
   sepia: 0,
   hueRotate: 0,
   saturation: 1,
-  invert: 0
+  invert: 0,
 };
 
 const filtersMainImage = () => {
-  const filterString =
-
-    `brightness(${filterValues.brightness})
+  const filterString = `brightness(${filterValues.brightness})
       opacity(${filterValues.opacity})
       contrast(${filterValues.contrast}%)
       blur(${filterValues.blur}px)
@@ -43,338 +39,473 @@ const filtersMainImage = () => {
       sepia(${filterValues.sepia}%)
       hue-rotate(${filterValues.hueRotate}deg)
       saturate(${filterValues.saturation}%)
-      invert(${filterValues.invert})`
+      invert(${filterValues.invert})`;
 
-  $(".mainImagen").style.filter = filterString
-
-}
-
+  $(".mainImagen").style.filter = filterString;
+};
 
 $("#brightness").addEventListener("input", () => {
-  console.log("Control deslizante de brillo cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de brillo cambiado");
+  filtersMainImage();
+});
 
 $("#opacity").addEventListener("input", () => {
-  console.log("Control deslizante de opacidad cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de opacidad cambiado");
+  filtersMainImage();
+});
 
 $("#contrast").addEventListener("input", () => {
-  console.log("Control deslizante de contraste cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de contraste cambiado");
+  filtersMainImage();
+});
 
 $("#blur").addEventListener("input", () => {
-  console.log("Control deslizante de desenfoque cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de desenfoque cambiado");
+  filtersMainImage();
+});
 
 $("#grayscale").addEventListener("input", () => {
-  console.log("Control deslizante de escala de grises cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de escala de grises cambiado");
+  filtersMainImage();
+});
 
 $("#sepia").addEventListener("input", () => {
-  console.log("Control deslizante de sepia cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de sepia cambiado");
+  filtersMainImage();
+});
 
 document.querySelector("#hue-rotate").addEventListener("input", () => {
-  console.log("Control deslizante de hue cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de hue cambiado");
+  filtersMainImage();
+});
 
 $("#saturation").addEventListener("input", () => {
-  console.log("Control deslizante de saturación cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de saturación cambiado");
+  filtersMainImage();
+});
 
 $("#invert").addEventListener("input", () => {
-  console.log("Control deslizante de negativo cambiado")
-  filtersMainImage()
-})
+  console.log("Control deslizante de negativo cambiado");
+  filtersMainImage();
+});
 
 $("#brightness").addEventListener("input", (e) => {
-  filterValues.brightness = e.target.value
-  filtersMainImage()
-})
+  filterValues.brightness = e.target.value;
+  filtersMainImage();
+});
 
 $("#opacity").addEventListener("input", (e) => {
-  filterValues.opacity = e.target.value
-  filtersMainImage()
-})
+  filterValues.opacity = e.target.value;
+  filtersMainImage();
+});
 
 $("#contrast").addEventListener("input", (e) => {
-  filterValues.contrast = e.target.value
-  filtersMainImage()
-})
+  filterValues.contrast = e.target.value;
+  filtersMainImage();
+});
 
 $("#blur").addEventListener("input", (e) => {
-  filterValues.blur = e.target.value
-  filtersMainImage()
-})
+  filterValues.blur = e.target.value;
+  filtersMainImage();
+});
 
 $("#grayscale").addEventListener("input", (e) => {
-  filterValues.grayscale = e.target.value
-  filtersMainImage()
-})
+  filterValues.grayscale = e.target.value;
+  filtersMainImage();
+});
 
 $("#sepia").addEventListener("input", (e) => {
-  filterValues.sepia = e.target.value
-  filtersMainImage()
-})
+  filterValues.sepia = e.target.value;
+  filtersMainImage();
+});
 
 $("#hue-rotate").addEventListener("input", (e) => {
-  filterValues.hueRotate = e.target.value
-  filtersMainImage()
-})
+  filterValues.hueRotate = e.target.value;
+  filtersMainImage();
+});
 
 $("#saturation").addEventListener("input", (e) => {
-  filterValues.saturation = e.target.value
-  filtersMainImage()
-})
+  filterValues.saturation = e.target.value;
+  filtersMainImage();
+});
 
 $("#invert").addEventListener("input", (e) => {
-  filterValues.invert = e.target.value
-  filtersMainImage()
-})
+  filterValues.invert = e.target.value;
+  filtersMainImage();
+});
 
 //boton reseteo de filtros
 $("#resetFilters").addEventListener("click", () => {
-  $("#brightness").value = "1"
-  $("#opacity").value = "1"
-  $("#contrast").value = "100"
-  $("#blur").value = "0"
-  $("#grayscale").value = "0"
-  $("#sepia").value = "0"
-  $("#hue-rotate").value = "0"
-  $("#saturation").value = "100"
-  $("#invert").value = "0"
-  $("#mainImagen").style.filter = "none"
-})
+  $("#brightness").value = "1";
+  $("#opacity").value = "1";
+  $("#contrast").value = "100";
+  $("#blur").value = "0";
+  $("#grayscale").value = "0";
+  $("#sepia").value = "0";
+  $("#hue-rotate").value = "0";
+  $("#saturation").value = "100";
+  $("#invert").value = "0";
+  $("#mainImagen").style.filter = "none";
+});
 //panel texto
 
 // texto superior
 $("#topText").addEventListener("input", (e) => {
-  $(".paragraphTop").innerText = e.target.value
-})
+  $(".paragraphTop").innerText = e.target.value;
+});
 // texto inferior
 $("#bottomText").addEventListener("input", (e) => {
-  $(".paragraphBottom").innerText = e.target.value
-})
-// color texto superior 
+  $(".paragraphBottom").innerText = e.target.value;
+});
+// color texto superior
 $("#color").addEventListener("input", (e) => {
-  $(".paragraphColorTop").style.color = e.target.value
-})
+  $(".paragraphColorTop").style.color = e.target.value;
+});
 // color texto inferior
 $("#color").addEventListener("input", (e) => {
-  $(".paragraphColorBottom").style.color = e.target.value
-})
+  $(".paragraphColorBottom").style.color = e.target.value;
+});
 //fondo texto superior
 
 $("#fondoTexto").addEventListener("input", (e) => {
-  $(".mainTopText").style.backgroundColor = e.target.value
-})
+  $(".mainTopText").style.backgroundColor = e.target.value;
+});
 
 //fondo texto inferior
 $("#fondoTexto").addEventListener("input", (e) => {
-  $(".mainBottomText").style.backgroundColor = e.target.value
-})
+  $(".mainBottomText").style.backgroundColor = e.target.value;
+});
 //fuentes
 $("#font").addEventListener("input", (e) => {
-  $(".paragraphTop").style.fontFamily = e.target.value
-})
+  $(".paragraphTop").style.fontFamily = e.target.value;
+});
 
 $("#font").addEventListener("input", (e) => {
-  $(".paragraphBottom").style.fontFamily = e.target.value
-})
+  $(".paragraphBottom").style.fontFamily = e.target.value;
+});
 $("#textAlingLeft").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "left"
-})
+  $(".main_textos").style.textAlign = "left";
+});
 
 $("#textAlingCenter").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "center"
-})
+  $(".main_textos").style.textAlign = "center";
+});
 
 $("#textAlingRight").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "right"
-})
+  $(".main_textos").style.textAlign = "right";
+});
 
 // contorno de texto
 
 $("#outlineNone").addEventListener("click", () => {
-  $(".paragraphTop").style.webkitTextStroke = "0px"
-})
+  $(".paragraphTop").style.webkitTextStroke = "0px";
+});
 
 $("#outlineNone").addEventListener("click", () => {
-  $(".paragraphBottom").style.webkitTextStroke = "0px"
-})
+  $(".paragraphBottom").style.webkitTextStroke = "0px";
+});
 
 $("#outlineLight").addEventListener("click", () => {
-  $(".paragraphTop").style.webkitTextStroke = "1px white"
-})
+  $(".paragraphTop").style.webkitTextStroke = "1px white";
+});
 
 $("#outlineLight").addEventListener("click", () => {
-  $(".paragraphBottom").style.webkitTextStroke = "1px white"
-})
+  $(".paragraphBottom").style.webkitTextStroke = "1px white";
+});
 
 $("#outlineDark").addEventListener("click", () => {
-  $(".paragraphTop").style.webkitTextStroke = "1px black"
-})
+  $(".paragraphTop").style.webkitTextStroke = "1px black";
+});
 
 $("#outlineDark").addEventListener("click", () => {
-  $(".paragraphBottom").style.webkitTextStroke = "1px black"
-})
+  $(".paragraphBottom").style.webkitTextStroke = "1px black";
+});
 
 //tamano de fuente de texto superior y de texto inferior
 $("#tamanioFuente").addEventListener("input", (e) => {
-  $(".paragraphTop").style.fontSize = e.target.value + "px"
-})
+  $(".paragraphTop").style.fontSize = e.target.value + "px";
+});
 
 $("#tamanioFuente").addEventListener("input", (e) => {
-  $(".paragraphBottom").style.fontSize = e.target.value + "px"
-})
+  $(".paragraphBottom").style.fontSize = e.target.value + "px";
+});
 
 //sin texto superior y sin texto inferior
 
 $("#sinTextoSuperior").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".paragraphTop").style.display = "none"
+    $(".paragraphTop").style.display = "none";
   } else {
-    $(".paragraphTop").style.display = "block"
+    $(".paragraphTop").style.display = "block";
   }
-})
+});
 
 $("#sinTextoInferior").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".paragraphBottom").style.display = "none"
+    $(".paragraphBottom").style.display = "none";
   } else {
-    $(".paragraphBottom").style.display = "block"
+    $(".paragraphBottom").style.display = "block";
   }
-})
+});
 //fondo transparente
 $("#fondoTransparente").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".mainTopText").style.backgroundColor = "transparent"
+    $(".mainTopText").style.backgroundColor = "transparent";
   } else {
-    $(".mainTopText").style.backgroundColor = "white"
+    $(".mainTopText").style.backgroundColor = "white";
   }
-})
+});
 
 $("#fondoTransparente").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".mainBottomText").style.backgroundColor = "transparent"
+    $(".mainBottomText").style.backgroundColor = "transparent";
   } else {
-    $(".mainBottomText").style.backgroundColor = "white"
+    $(".mainBottomText").style.backgroundColor = "white";
   }
-})
+});
 
 //espaciado
 $("#numberSpacing").addEventListener("input", (e) => {
-  $(".paragraphTop").style.padding = e.target.value + "px"
-})
+  $(".paragraphTop").style.padding = e.target.value + "px";
+});
 
 $("#numberSpacing").addEventListener("input", (e) => {
-  $(".paragraphBottom").style.padding = e.target.value + "px"
-})
+  $(".paragraphBottom").style.padding = e.target.value + "px";
+});
 // //interlineado
 $("#interlineadoTexto").addEventListener("input", (e) => {
-  $(".paragraphTop").style.lineHeight = e.target.value
-})
+  $(".paragraphTop").style.lineHeight = e.target.value;
+});
 
 $("#interlineadoTexto").addEventListener("input", (e) => {
-  $(".paragraphBottom").style.lineHeight = e.target.value
-})
+  $(".paragraphBottom").style.lineHeight = e.target.value;
+});
 
 //boton imagen
 
 $("#buttonImage").addEventListener("click", (e) => {
-  $(".asideImagen").style.display = "block"
-
-})
+  $(".asideImagen").style.display = "block";
+});
 
 //boton texto
 $("#buttonTexto").addEventListener("click", (e) => {
-  $(".asideTexto").style.display = "block"
-
-})
+  $(".asideTexto").style.display = "block";
+});
 //boton de cierre de paneles imagen y texto
 $("#buttonClosePanelImage").addEventListener("click", (e) => {
-  $(".asideImagen").style.display = "none"
-
-})
-
+  $(".asideImagen").style.display = "none";
+});
 
 $("#buttonClosePanelText").addEventListener("click", (e) => {
-  $(".asideTexto").style.display = "none"
-
-})
+  $(".asideTexto").style.display = "none";
+});
 
 //toogle de paneles en mq 768px
 $(".buttonImage").addEventListener("click", () => {
-  $(".asideTexto").classList.toggle("asideImagen")
-})
+  $(".asideTexto").classList.toggle("asideImagen");
+});
 
 $(".buttonImage").addEventListener("click", () => {
-  $(".asideTexto").style.display = "none"
-})
+  $(".asideTexto").style.display = "none";
+});
 
 //boton de descarga
 
 const downloadImage = () => {
   domtoimage.toBlob($(".main")).then((blob) => {
-    saveAs(blob, "my-meme.png")
-  })
-}
+    saveAs(blob, "my-meme.png");
+  });
+};
+$("#download").addEventListener("click", downloadImage);
 //modo oscuro
 $(".change-theme").addEventListener("click", () => {
-  const currentTheme = $("body").getAttribute("data-theme")
+  const currentTheme = $("body").getAttribute("data-theme");
   if (currentTheme) {
-    $("body").removeAttribute("data-theme", "light-theme")
+    $("body").removeAttribute("data-theme", "light-theme");
   } else {
-    $("body").setAttribute("data-theme", "light-theme")
+    $("body").setAttribute("data-theme", "light-theme");
   }
-
-})
+});
 
 $(".change-theme").addEventListener("click", () => {
   $(".dark").classList.toggle("hidden");
   $(".light").classList.toggle("hidden");
 });
 
-
-
-
-$("#download").addEventListener("click", downloadImage)
-
 //funcion carga inicial
-// const initializeProject = () => {
-//   // EVENTOS
-//   $("#download").addEventListener("click", downloadMeme)
+const initializeProject = () => {
+  $("#urlImage").addEventListener("input", (e) => {
+    $(".mainImagen").style.backgroundImage = `url(${e.target.value})`;
+  });
+  //fondo de imagen
+  $("#fondoImagen").addEventListener("input", (e) => {
+    $(".mainImagen").style.backgroundColor = e.target.value;
+  });
+  // //select mix-blend-mode
+  $("#mixFilters").addEventListener("input", (e) => {
+    $(".mainImagen").style.backgroundBlendMode = e.target.value;
+  });
 
-//   $("input").addEventListener("input", () => {
-//       // bloque de codigo
-//   })
+  $("#brightness").addEventListener("input", (e) => {
+    filterValues.brightness = e.target.value;
+    filtersMainImage();
+  });
 
-//   $("input").addEventListener("input", () => {
-//       // bloque de codigo
-//   })
+  $("#opacity").addEventListener("input", (e) => {
+    filterValues.opacity = e.target.value;
+    filtersMainImage();
+  });
 
-//   $("input").addEventListener("input", () => {
-//       // bloque de codigo
-//   })
+  $("#contrast").addEventListener("input", (e) => {
+    filterValues.contrast = e.target.value;
+    filtersMainImage();
+  });
 
-//   $("input").addEventListener("input", () => {
-//       // bloque de codigo
-//   })
+  $("#blur").addEventListener("input", (e) => {
+    filterValues.blur = e.target.value;
+    filtersMainImage();
+  });
 
-//   $("input").addEventListener("input", () => {
-//       // bloque de codigo
-//   })
-// }
+  $("#grayscale").addEventListener("input", (e) => {
+    filterValues.grayscale = e.target.value;
+    filtersMainImage();
+  });
 
-// window.addEventListener("load", initializeProject)
+  $("#sepia").addEventListener("input", (e) => {
+    filterValues.sepia = e.target.value;
+    filtersMainImage();
+  });
 
+  $("#hue-rotate").addEventListener("input", (e) => {
+    filterValues.hueRotate = e.target.value;
+    filtersMainImage();
+  });
 
+  $("#saturation").addEventListener("input", (e) => {
+    filterValues.saturation = e.target.value;
+    filtersMainImage();
+  });
 
+  $("#invert").addEventListener("input", (e) => {
+    filterValues.invert = e.target.value;
+    filtersMainImage();
+  });
+
+  //panel texto
+
+  // texto superior
+  $("#topText").addEventListener("input", (e) => {
+    $(".paragraphTop").innerText = e.target.value;
+  });
+  // texto inferior
+  $("#bottomText").addEventListener("input", (e) => {
+    $(".paragraphBottom").innerText = e.target.value;
+  });
+  // color texto superior
+  $("#color").addEventListener("input", (e) => {
+    $(".paragraphColorTop").style.color = e.target.value;
+  });
+  // color texto inferior
+  $("#color").addEventListener("input", (e) => {
+    $(".paragraphColorBottom").style.color = e.target.value;
+  });
+  //fondo texto superior
+
+  $("#fondoTexto").addEventListener("input", (e) => {
+    $(".mainTopText").style.backgroundColor = e.target.value;
+  });
+
+  //fondo texto inferior
+  $("#fondoTexto").addEventListener("input", (e) => {
+    $(".mainBottomText").style.backgroundColor = e.target.value;
+  });
+  //fuentes
+  $("#font").addEventListener("input", (e) => {
+    $(".paragraphTop").style.fontFamily = e.target.value;
+  });
+
+  $("#font").addEventListener("input", (e) => {
+    $(".paragraphBottom").style.fontFamily = e.target.value;
+  });
+
+  //tamano de fuente de texto superior y de texto inferior
+  $("#tamanioFuente").addEventListener("input", (e) => {
+    $(".paragraphTop").style.fontSize = e.target.value + "px";
+  });
+
+  $("#tamanioFuente").addEventListener("input", (e) => {
+    $(".paragraphBottom").style.fontSize = e.target.value + "px";
+  });
+
+  //sin texto superior y sin texto inferior
+
+  $("#sinTextoSuperior").addEventListener("input", (e) => {
+    if (e.target.checked) {
+      $(".paragraphTop").style.display = "none";
+    } else {
+      $(".paragraphTop").style.display = "block";
+    }
+  });
+
+  $("#sinTextoInferior").addEventListener("input", (e) => {
+    if (e.target.checked) {
+      $(".paragraphBottom").style.display = "none";
+    } else {
+      $(".paragraphBottom").style.display = "block";
+    }
+  });
+  //fondo transparente
+  $("#fondoTransparente").addEventListener("input", (e) => {
+    if (e.target.checked) {
+      $(".mainTopText").style.backgroundColor = "transparent";
+    } else {
+      $(".mainTopText").style.backgroundColor = "white";
+    }
+  });
+
+  $("#fondoTransparente").addEventListener("input", (e) => {
+    if (e.target.checked) {
+      $(".mainBottomText").style.backgroundColor = "transparent";
+    } else {
+      $(".mainBottomText").style.backgroundColor = "white";
+    }
+  });
+
+  //espaciado
+  $("#numberSpacing").addEventListener("input", (e) => {
+    $(".paragraphTop").style.padding = e.target.value + "px";
+  });
+
+  $("#numberSpacing").addEventListener("input", (e) => {
+    $(".paragraphBottom").style.padding = e.target.value + "px";
+  });
+  // //interlineado
+  $("#interlineadoTexto").addEventListener("input", (e) => {
+    $(".paragraphTop").style.lineHeight = e.target.value;
+  });
+
+  $("#interlineadoTexto").addEventListener("input", (e) => {
+    $(".paragraphBottom").style.lineHeight = e.target.value;
+  });
+
+  //boton imagen
+
+  $("#buttonImage").addEventListener("click", (e) => {
+    $(".asideImagen").style.display = "block";
+  });
+
+  //boton texto
+  $("#buttonTexto").addEventListener("click", (e) => {
+    $(".asideTexto").style.display = "block";
+  });
+  //boton de cierre de paneles imagen y texto
+  $("#buttonClosePanelImage").addEventListener("click", (e) => {
+    $(".asideImagen").style.display = "none";
+  });
+
+  $("#buttonClosePanelText").addEventListener("click", (e) => {
+    $(".asideTexto").style.display = "none";
+  });
+};
+
+window.addEventListener("load", initializeProject);
