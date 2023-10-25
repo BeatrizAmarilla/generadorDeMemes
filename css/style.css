@@ -1,19 +1,17 @@
 :root {
-    --background-primary: #181818;
-    --background-secondary: #082eea;
+    --background-primary: #111111;
+    --background-secondary: #240bb0;
     --font-color-primary: #e7e7e7;
     --font-color-secondary: #e7e7e7;
-    --button-color-primary: #430373;
-    --button-color-hover: #4f038a;
+    --button-color-primary: #094e03;
 }
 
 [data-theme="light-theme"] {
     --background-primary: #e7e7e7;
     --background-secondary: #ababab;
-    --font-color-primary: #181818;
+    --font-color-primary: #d9d7d7;
     --font-color-secondary: #e7e7e7;
-    --button-color-primary: #7b26bc;
-    --button-color-hover: #8e34d2;   
+    --button-color-primary: #01ba33;
 }
 body {
     /* display: flex;
@@ -33,9 +31,15 @@ body {
     color: var(--font-color-primary);
 }
 
+ .light{
+    display: block;
+ }
+
+
+
 .hidden {
     display: none;
-}
+} 
 
 @media screen and (min-width: 320px) {
 *{
@@ -48,7 +52,7 @@ body {
 .header{
     width: 100%;
     height: 100px;
-    background-color: rgb(194, 187, 187);
+    background-color: var(--background-secondary);
   
 }
   
@@ -74,8 +78,8 @@ body {
 
 .main{
     width: 100%;
-    height: 600px;
-    background-color:var(--background-secondary);
+    height: 400px;
+    background-color:var(--background-primary);
     padding: 30px;
     display: block;
     justify-content: center;
@@ -87,15 +91,16 @@ body {
     display: block;
     justify-content: center;
     text-align: center;
+   
  
 }
 
 .mainTopText{
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
 }
 
 .mainBottomText{
-    background-color:var(--background-primary);
+    background-color:var(--background-secondary);
 }
 
 .mainImagen{
@@ -144,7 +149,25 @@ body {
     right: 0;
     
    }
-   
+   .buttonClosePanelImage{
+    position: absolute;
+    right: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buttonClosePanelText{
+    position: absolute;
+    right: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
    @media screen and (min-width: 768px) {
 
     .asideImagen{

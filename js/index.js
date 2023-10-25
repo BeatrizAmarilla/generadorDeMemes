@@ -320,9 +320,6 @@ $(".buttonImage").addEventListener("click", () => {
   $(".asideTexto").style.display = "none"
 })
 
-
-
-
 //boton de descarga
 
 const downloadImage = () => {
@@ -330,6 +327,23 @@ const downloadImage = () => {
     saveAs(blob, "my-meme.png")
   })
 }
+//modo oscuro
+$(".change-theme").addEventListener("click", () => {
+  const currentTheme = $("body").getAttribute("data-theme")
+  if (currentTheme) {
+      $("body").removeAttribute("data-theme", "light-theme")
+  } else {
+      $("body").setAttribute("data-theme", "light-theme")
+  }
+  
+})
+
+$(".change-theme").addEventListener("click", () => {
+  $(".dark").classList.toggle("hidden");
+  $(".light").classList.toggle("hidden");
+});
+
+
 
 
 $("#download").addEventListener("click", downloadImage)
