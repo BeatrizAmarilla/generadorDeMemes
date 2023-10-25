@@ -33,9 +33,9 @@ let filterValues = {
 };
 
 const filtersMainImage = () => {
-  const filterString = 
+  const filterString =
 
-  `brightness(${filterValues.brightness})
+    `brightness(${filterValues.brightness})
       opacity(${filterValues.opacity})
       contrast(${filterValues.contrast}%)
       blur(${filterValues.blur}px)
@@ -45,78 +45,78 @@ const filtersMainImage = () => {
       saturate(${filterValues.saturation}%)
       invert(${filterValues.invert})`
 
-$(".mainImagen").style.filter = filterString
+  $(".mainImagen").style.filter = filterString
 
 }
 
 
 $("#brightness").addEventListener("input", () => {
   console.log("Control deslizante de brillo cambiado")
- filtersMainImage()
+  filtersMainImage()
 })
 
 $("#opacity").addEventListener("input", () => {
   console.log("Control deslizante de opacidad cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#contrast").addEventListener("input", () => {
   console.log("Control deslizante de contraste cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#blur").addEventListener("input", () => {
   console.log("Control deslizante de desenfoque cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#grayscale").addEventListener("input", () => {
   console.log("Control deslizante de escala de grises cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#sepia").addEventListener("input", () => {
   console.log("Control deslizante de sepia cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 document.querySelector("#hue-rotate").addEventListener("input", () => {
   console.log("Control deslizante de hue cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#saturation").addEventListener("input", () => {
   console.log("Control deslizante de saturación cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
 $("#invert").addEventListener("input", () => {
   console.log("Control deslizante de negativo cambiado")
-   filtersMainImage()
+  filtersMainImage()
 })
 
-  $("#brightness").addEventListener("input", (e) => {
-    filterValues.brightness = e.target.value
-      filtersMainImage()
-  })
+$("#brightness").addEventListener("input", (e) => {
+  filterValues.brightness = e.target.value
+  filtersMainImage()
+})
 
-  $("#opacity").addEventListener("input", (e) => {
-    filterValues.opacity = e.target.value
-      filtersMainImage()
-  })
+$("#opacity").addEventListener("input", (e) => {
+  filterValues.opacity = e.target.value
+  filtersMainImage()
+})
 
-  $("#contrast").addEventListener("input", (e) => {
-    filterValues .contrast= e.target.value
-    filtersMainImage()
-  })
+$("#contrast").addEventListener("input", (e) => {
+  filterValues.contrast = e.target.value
+  filtersMainImage()
+})
 
 $("#blur").addEventListener("input", (e) => {
-  filterValues .blur = e.target.value
+  filterValues.blur = e.target.value
   filtersMainImage()
 })
 
 $("#grayscale").addEventListener("input", (e) => {
-  filterValues .grayscale= e.target.value
+  filterValues.grayscale = e.target.value
   filtersMainImage()
 })
 
@@ -229,7 +229,7 @@ $("#outlineDark").addEventListener("click", () => {
 
 //tamano de fuente de texto superior y de texto inferior
 $("#tamanioFuente").addEventListener("input", (e) => {
-    $(".paragraphTop").style.fontSize = e.target.value + "px"
+  $(".paragraphTop").style.fontSize = e.target.value + "px"
 })
 
 $("#tamanioFuente").addEventListener("input", (e) => {
@@ -271,16 +271,16 @@ $("#fondoTransparente").addEventListener("input", (e) => {
 })
 
 //espaciado
-$("#numberSpacing").addEventListener("input",(e) => {
-  $(".paragraphTop").style.padding =  e.target.value + "px"
+$("#numberSpacing").addEventListener("input", (e) => {
+  $(".paragraphTop").style.padding = e.target.value + "px"
 })
 
-$("#numberSpacing").addEventListener("input",(e) => {
-  $(".paragraphBottom").style.padding =  e.target.value + "px"
+$("#numberSpacing").addEventListener("input", (e) => {
+  $(".paragraphBottom").style.padding = e.target.value + "px"
 })
 // //interlineado
 $("#interlineadoTexto").addEventListener("input", (e) => {
-  $(".paragraphTop").style.lineHeight = e.target.value 
+  $(".paragraphTop").style.lineHeight = e.target.value
 })
 
 $("#interlineadoTexto").addEventListener("input", (e) => {
@@ -331,11 +331,11 @@ const downloadImage = () => {
 $(".change-theme").addEventListener("click", () => {
   const currentTheme = $("body").getAttribute("data-theme")
   if (currentTheme) {
-      $("body").removeAttribute("data-theme", "light-theme")
+    $("body").removeAttribute("data-theme", "light-theme")
   } else {
-      $("body").setAttribute("data-theme", "light-theme")
+    $("body").setAttribute("data-theme", "light-theme")
   }
-  
+
 })
 
 $(".change-theme").addEventListener("click", () => {
