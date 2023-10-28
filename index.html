@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generador de Memes</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
     <!-- download image -->
     <script
@@ -16,320 +16,301 @@
       integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/641b5da981.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- seccion header -->
-    <header class="header">
-      <h1 class="header_titulo">Generador de Memes</h1>
-      <div class="header_button">
-        <button class="header__boton buttonImage" id="buttonImage">
-          <img
-            width="16"
-            height="16"
-            src="https://img.icons8.com/tiny-glyph/16/image.png"
-            alt="image"
-          />Imagen
-        </button>
-        <button class="header__boton buttonTexto" id="buttonTexto">
-          <img
-            width="16"
-            height="16"
-            src="https://img.icons8.com/tiny-glyph/16/xbox-a.png"
-            alt="xbox-a"
-          />texto
-        </button>
-        <button class="header__boton change-theme">
-          <span class="dark hidden" id="dark">
-            <img
-              width="16"
-              height="16"
-              src="https://img.icons8.com/sf-ultralight-filled/16/light.png"
-              alt="light"
-              class="darkMode"
-            />Modo oscuro</span
-          >
-          <span class="light" id="light">
-            <img
-              width="16"
-              height="16"
-              src="https://img.icons8.com/fluency-systems-regular/16/light.png"
-              alt="light"
-              class="lightMode"
-            />Modo claro</span
-          >
-        </button>
-      </div>
-    </header>
-    <!-- seccion main -->
-    <main class="main">
-      <div class="main_textos">
-        <div class="mainTopText">
+    <div class="containerGeneral">
+      <header class="header">
+        <h1 class="header_titulo">Generador de Memes</h1>
+
+        <div class="header_button">
+          <button class="header__boton buttonImage" id="buttonImage">
+            <i class="fa-regular fa-image"></i>Imagen
+          </button>
+          <button class="header__boton buttonTexto" id="buttonTexto">
+            <i class="fa-solid fa-font"></i>texto
+          </button>
+          <button class="header__boton change-theme">
+            <span class="dark hidden" id="dark">
+              <i class="fa-solid fa-lightbulb"></i>Modo oscuro</span
+            >
+            <span class="light" id="light">
+              <i class="fa-regular fa-lightbulb"></i>Modo claro</span
+            >
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="mainTopText" id="mainTopText">
           <p class="paragraphTop paragraphColorTop">TOP TEXT</p>
         </div>
         <div class="mainImagen" id="mainImagen"></div>
-        <div class="mainBottomText">
+        <div class="mainBottomText" id="mainBottomText">
           <p class="paragraphBottom paragraphColorBottom">BOTTOM TEXT</p>
         </div>
-      </div>
-      <button class="main_button" id="download">
-        <img
-          width="16"
-          height="16"
-          src="https://img.icons8.com/material-two-tone/16/download--v1.png"
-          alt="download--v1"
-        />DESCARGAR MEME
-      </button>
-    </main>
-    <!-- panel imagen -->
-    <aside class="asideImagen" id="asideImagen">
-      <button class="buttonClosePanelImage" id="buttonClosePanelImage">
+        <button class="main_button" id="download">
+          <img
+            width="16"
+            height="16"
+            src="https://img.icons8.com/material-two-tone/16/download--v1.png"
+            alt="download--v1"
+          />DESCARGAR MEME
+        </button>
+      </main>
+    </div>
+    <aside class="asidePaneles">
+      <button class="buttonClosePanel hidden" id="buttonClosePanel">
         &times;
       </button>
-      <h2 class="titleImage">IMAGEN</h2>
-      <!-- url de imagen -->
-      <h3>URL</h3>
-      <input type="text" name="url" id="urlImage" class="inputs" />
-      <!-- fondo de imagen -->
-      <h3>FONDO</h3>
-      <input type="color" name="fondo" id="fondoImagen" class="inputs" />
-      <select name="" id="mixFilters">
-        <option value="unset">Ninguno</option>
-        <option value="lighten">Aclarar</option>
-        <option value="darken">Oscurecer</option>
-        <option value="difference">Diferencia</option>
-        <option value="luminosity">Luminosidad</option>
-        <option value="multiply">Multiplicar</option>
-      </select>
-      <!-- FILTROS -->
-      <h3>FILTROS</h3>
-      <div class="inputs">
-        <label for="brightness">BRILLO</label>
-        <input
-          type="range"
-          name="brightness"
-          id="brightness"
-          min="0"
-          max="1"
-          step="0.1"
-          value="1"
-        />
-      </div>
-      <div class="inputs">
-        <label for="opacity">OPACIDAD</label>
-        <input
-          type="range"
-          name="opacity"
-          id="opacity"
-          min="0"
-          max="1"
-          step="0.1"
-          value="1"
-        />
-      </div>
-      <div class="inputs">
-        <label for="contrast">CONTRASTE</label>
-        <input
-          type="range"
-          name="contrast"
-          id="contrast"
-          min="100"
-          max="1000"
-          step="1"
-          value="100"
-        />
-      </div>
-      <div class="inputs">
-        <label for="blur">DESENFOQUE</label>
-        <input
-          type="range"
-          name="blur"
-          id="blur"
-          min="0"
-          max="10"
-          step="0.1"
-          value="0"
-        />
-      </div>
-      <div class="inputs">
-        <label for="grayscale">ESCALA DE GRISES</label>
-        <input
-          type="range"
-          name="grayscale"
-          id="grayscale"
-          min="0"
-          max="100"
-          step="1"
-          value="0"
-        />
-      </div>
-      <div class="inputs">
-        <label for="sepia">SEPIA</label>
-        <input
-          type="range"
-          name="sepia"
-          id="sepia"
-          min="0"
-          max="100"
-          step="1"
-          value="0"
-        />
-      </div>
-      <div class="inputs">
-        <label for="hue-rotate">HUE</label>
-        <input
-          type="range"
-          name="hueR"
-          id="hueR"
-          min="0"
-          max="359"
-          step="1"
-          value="0"
-        />
-      </div>
-      <div class="inputs">
-        <label for="saturation">SATURADO</label>
-        <input
-          type="range"
-          name="saturate"
-          id="saturate"
-          min="0"
-          max="1"
-          step="0.1"
-          value="1"
-        />
-      </div>
-      <div class="inputs">
-        <label for="invert">NEGATIVO</label>
-        <input
-          type="range"
-          name="invert"
-          id="invert"
-          min="0"
-          max="1"
-          step="0.1"
-          value="1"
-        />
-      </div>
-      <button id="resetFilters" class="inputs">Reset Filtros</button>
-    </aside>
-    <!-- panel texto -->
-    <aside class="asideTexto" id="asideTexto">
-      <button class="buttonClosePanelText" id="buttonClosePanelText">
-        &times;
-      </button>
-      <h2 class="titleImage">TEXTO</h2>
-      <div class="textSupeInf">
-        <h3>SUPERIOR</h3>
-        <input type="text" name="text" id="topText" class="inputs" />
-        <div class="checkboxSupeInf">
-          <label for="sinTextoSuperior" class="inputs"
-            >Sin Texto Superior</label
-          >
-          <input type="checkbox" name="" id="sinTextoSuperior" />
+      <div class="asideImagen" id="asideImagen">
+        <h2 class="titleImage">IMAGEN</h2>
+        <!-- url de imagen -->
+        <div class="conteinerUrl">
+          <h3>URL</h3>
+          <input type="text" name="url" id="urlImage" class="inputs" />
         </div>
-      </div>
-      <div class="textSupeInf">
-        <h3>INFERIOR</h3>
-        <input type="text" name="text" id="bottomText" class="inputs" />
-        <div class="checkboxSupeInf">
-          <label for="sinTextoInferior" class="inputs"
-            >Sin Texto Inferior</label
-          >
-          <input type="checkbox" name="" id="sinTextoInferior" />
+        <!-- fondo de imagen -->
+        <div class="selectFondo">
+          <h3>FONDO</h3>
+          <input type="color" name="fondo" id="fondoImagen" class="inputs" />
+          <select name="" id="mixFilters">
+            <option value="unset">Ninguno</option>
+            <option value="lighten">Aclarar</option>
+            <option value="darken">Oscurecer</option>
+            <option value="difference">Diferencia</option>
+            <option value="luminosity">Luminosidad</option>
+            <option value="multiply">Multiplicar</option>
+          </select>
         </div>
-      </div>
-      <h3>FUENTES</h3>
-      <select name="" id="font" class="inputs">
-        <option
-          value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
-        >
-          Selecciona
-        </option>
-        <option value="Arial, Helvetica, sans-serif">Arial</option>
-        <option value="Arial Black">Arial Black</option>
-        <option value="American Typewriter">American Typewriter</option>
-        <option value="Andale Momo">Andale Momo</option>
-        <option value="Comic Sans MS">Comic Sans MS</option>
-        <option value="Helvetica">Helvetica</option>
-        <option value="Impact">Impact</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Times New Roman">Times New Roman</option>
-      </select>
-      <button id="textAlingLeft">
-        <img
-          width="16"
-          height="16"
-          src="https://img.icons8.com/material-outlined/16/align-left.png"
-          alt="align-left"
-        />
-      </button>
-      <button id="textAlingCenter">
-        <img
-          width="16"
-          height="16"
-          src="https://img.icons8.com/ios-filled/16/align-center.png"
-          alt="align-center"
-        />
-      </button>
-      <button id="textAlingRight">
-        <img
-          width="16"
-          height="16"
-          src="https://img.icons8.com/ios-filled/16/align-right.png"
-          alt="align-right"
-        />
-      </button>
-      <input
-        type="number"
-        name="number"
-        id="tamanioFuente"
-        min="16"
-        max="50"
-        value="16"
-      />
-      <h3>COLOR</h3>
-      <input type="color" name="color" id="color" class="inputs" />
-      <div class="textSupeInf">
-        <h3>FONDO</h3>
-        <input type="color" name="fondo" id="fondoTexto" class="inputs" />
-        <div class="checkboxSupeInf">
-          <label for="fondoTransparente" class="inputs"
-            >Fondo Transparente</label
-          >
-          <input type="checkbox" name="" id="fondoTransparente" />
+        <!-- FILTROS -->
+        <div class="conteinerFiltros">
+          <h3>FILTROS</h3>
+          <div class="inputs">
+            <label for="brightness">BRILLO</label>
+            <input
+              type="range"
+              name="brightness"
+              id="brightness"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <div class="inputs">
+            <label for="opacity">OPACIDAD</label>
+            <input
+              type="range"
+              name="opacity"
+              id="opacity"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <div class="inputs">
+            <label for="contrast">CONTRASTE</label>
+            <input
+              type="range"
+              name="contrast"
+              id="contrast"
+              min="100"
+              max="1000"
+              step="1"
+              value="100"
+            />
+          </div>
+          <div class="inputs">
+            <label for="blur">DESENFOQUE</label>
+            <input
+              type="range"
+              name="blur"
+              id="blur"
+              min="0"
+              max="10"
+              step="0.1"
+              value="0"
+            />
+          </div>
+          <div class="inputs">
+            <label for="grayscale">ESCALA DE GRISES</label>
+            <input
+              type="range"
+              name="grayscale"
+              id="grayscale"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="inputs">
+            <label for="sepia">SEPIA</label>
+            <input
+              type="range"
+              name="sepia"
+              id="sepia"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="inputs">
+            <label for="hue-rotate">HUE</label>
+            <input
+              type="range"
+              name="hueR"
+              id="hueR"
+              min="0"
+              max="359"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="inputs">
+            <label for="saturation">SATURADO</label>
+            <input
+              type="range"
+              name="saturate"
+              id="saturate"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <div class="inputs">
+            <label for="invert">NEGATIVO</label>
+            <input
+              type="range"
+              name="invert"
+              id="invert"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
         </div>
+        <button id="resetFilters" class="inputs">Reset Filtros</button>
       </div>
-      <h3>CONTORNO</h3>
-      <div class="inputs">
-        <button id="outlineNone">NINGUNO</button>
-        <button id="outlineLight">CLARO</button>
-        <button id="outlineDark">OSCURO</button>
-      </div>
-      <h3>ESPACIADO</h3>
-      <div class="inputs">
+      <div class="asideTexto" id="asideTexto">
+        <h2 class="titleImage">TEXTO</h2>
+        <div class="textSupeInf">
+          <h3>SUPERIOR</h3>
+          <input type="text" name="text" id="topText" class="inputs" />
+          <div class="checkboxSupeInf">
+            <label for="sinTextoSuperior" class="inputs"
+              >Sin Texto Superior</label
+            >
+            <input type="checkbox" name="" id="sinTextoSuperior" />
+          </div>
+        </div>
+        <div class="textSupeInf">
+          <h3>INFERIOR</h3>
+          <input type="text" name="text" id="bottomText" class="inputs" />
+          <div class="checkboxSupeInf">
+            <label for="sinTextoInferior" class="inputs"
+              >Sin Texto Inferior</label
+            >
+            <input type="checkbox" name="" id="sinTextoInferior" />
+          </div>
+        </div>
+        <h3>FUENTES</h3>
+        <select name="" id="font" class="inputs">
+          <option
+            value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+          >
+            Selecciona
+          </option>
+          <option value="Arial, Helvetica, sans-serif">Arial</option>
+          <option value="Arial Black">Arial Black</option>
+          <option value="American Typewriter">American Typewriter</option>
+          <option value="Andale Momo">Andale Momo</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Impact">Impact</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <button id="textAlingLeft">
+          <img
+            width="16"
+            height="16"
+            src="https://img.icons8.com/material-outlined/16/align-left.png"
+            alt="align-left"
+          />
+        </button>
+        <button id="textAlingCenter">
+          <img
+            width="16"
+            height="16"
+            src="https://img.icons8.com/ios-filled/16/align-center.png"
+            alt="align-center"
+          />
+        </button>
+        <button id="textAlingRight">
+          <img
+            width="16"
+            height="16"
+            src="https://img.icons8.com/ios-filled/16/align-right.png"
+            alt="align-right"
+          />
+        </button>
         <input
           type="number"
-          name="numberSpacing"
-          id="numberSpacing"
-          step="1"
-          min="10"
+          name="number"
+          id="tamanioFuente"
+          min="16"
           max="50"
-          value="35"
+          value="16"
         />
-      </div>
-      <h3>INTERLINEADO</h3>
-      <div class="inputs">
-        <select name="" id="interlineadoTexto">
-          <option value="0.8">0.8</option>
-          <option value="1">1</option>
-          <option value="1.2" selected>1.2</option>
-          <option value="1.5">1.5</option>
-          <option value="2">2</option>
-          <option value="2.5">2.5</option>
-        </select>
+        <h3>COLOR</h3>
+        <input type="color" name="color" id="color" class="inputs" />
+        <div class="textSupeInf">
+          <h3>FONDO</h3>
+          <input type="color" name="fondo" id="fondoTexto" class="inputs" />
+          <div class="checkboxSupeInf">
+            <label for="fondoTransparente" class="inputs"
+              >Fondo Transparente</label
+            >
+            <input type="checkbox" name="" id="fondoTransparente" />
+          </div>
+        </div>
+        <h3>CONTORNO</h3>
+        <div class="inputs">
+          <button id="outlineNone">NINGUNO</button>
+          <button id="outlineLight">CLARO</button>
+          <button id="outlineDark">OSCURO</button>
+        </div>
+        <h3>ESPACIADO</h3>
+        <div class="inputs">
+          <input
+            type="number"
+            name="numberSpacing"
+            id="numberSpacing"
+            step="1"
+            min="10"
+            max="50"
+            value="35"
+          />
+        </div>
+        <h3>INTERLINEADO</h3>
+        <div class="inputs">
+          <select name="" id="interlineadoTexto">
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2" selected>1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+          </select>
+        </div>
       </div>
     </aside>
-
     <script src="./js/index.js"></script>
   </body>
 </html>

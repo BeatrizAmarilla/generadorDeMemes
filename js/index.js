@@ -18,8 +18,8 @@ $("#mixFilters").addEventListener("input", (e) => {
 });
 
 // filtros
- 
-const allFilters = () =>{
+
+const allFilters = () => {
   $(".mainImagen").style.filter = `
   hue-rotate(${$("#hueR").value}deg)
   saturate(${$("#saturate").value})
@@ -30,18 +30,18 @@ const allFilters = () =>{
   blur(${$("#blur").value}px)
   grayscale(${$("#grayscale").value}%)
   sepia(${$("#sepia").value}%)  
-  `
-}
+  `;
+};
 
-$("#brightness").addEventListener("input",allFilters)
-$("#opacity").addEventListener("input",allFilters)
-$("#contrast").addEventListener("input",allFilters)
-$("#blur").addEventListener("input",allFilters)
-$("#grayscale").addEventListener("input",allFilters)
-$("#sepia").addEventListener("input",allFilters)
-$("#hueR").addEventListener("input",allFilters)
-$("#saturate").addEventListener("input",allFilters)
-$("#invert").addEventListener("input",allFilters)
+$("#brightness").addEventListener("input", allFilters);
+$("#opacity").addEventListener("input", allFilters);
+$("#contrast").addEventListener("input", allFilters);
+$("#blur").addEventListener("input", allFilters);
+$("#grayscale").addEventListener("input", allFilters);
+$("#sepia").addEventListener("input", allFilters);
+$("#hueR").addEventListener("input", allFilters);
+$("#saturate").addEventListener("input", allFilters);
+$("#invert").addEventListener("input", allFilters);
 
 //boton reseteo de filtros
 $("#resetFilters").addEventListener("click", () => {
@@ -86,15 +86,18 @@ $("#font").addEventListener("input", (e) => {
 
 //alineacion de texto
 $("#textAlingLeft").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "left";
+  $(".mainTopText").style.textAlign = "left";
+  $(".mainBottomText").style.textAlign = "left";
 });
 
 $("#textAlingCenter").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "center";
+  $(".mainTopText").style.textAlign = "center";
+  $(".mainBottomText").style.textAlign = "center";
 });
 
 $("#textAlingRight").addEventListener("click", () => {
-  $(".main_textos").style.textAlign = "right";
+  $(".mainTopText").style.textAlign = "right";
+  $(".mainBottomText").style.textAlign = "right";
 });
 
 // contorno de texto superior e inferior
@@ -103,7 +106,6 @@ $("#outlineNone").addEventListener("click", () => {
   $(".paragraphTop").style.webkitTextStroke = "0px";
   $(".paragraphBottom").style.webkitTextStroke = "0px";
 });
-
 
 $("#outlineLight").addEventListener("click", () => {
   $(".paragraphTop").style.webkitTextStroke = "1px white";
@@ -125,17 +127,17 @@ $("#tamanioFuente").addEventListener("input", (e) => {
 
 $("#sinTextoSuperior").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".paragraphTop").style.display = "none";
+    $(".mainTopText").style.display = "none";
   } else {
-    $(".paragraphTop").style.display = "block";
+    $(".mainTopText").style.display = "block";
   }
 });
 
 $("#sinTextoInferior").addEventListener("input", (e) => {
   if (e.target.checked) {
-    $(".paragraphBottom").style.display = "none";
+    $(".mainBottomText").style.display = "none";
   } else {
-    $(".paragraphBottom").style.display = "block";
+    $(".mainBottomText").style.display = "block";
   }
 });
 //fondo transparente
@@ -151,42 +153,71 @@ $("#fondoTransparente").addEventListener("input", (e) => {
 
 //espaciado
 $("#numberSpacing").addEventListener("input", (e) => {
-  $(".paragraphTop").style.padding = e.target.value + "px";
-  $(".paragraphBottom").style.padding = e.target.value + "px";
+  $(".mainTopText").style.padding = e.target.value + "px";
+  $(".mainBottomText").style.padding = e.target.value + "px";
 });
 
 // //interlineado
 $("#interlineadoTexto").addEventListener("input", (e) => {
-  $(".paragraphTop").style.lineHeight = e.target.value;
-  $(".paragraphBottom").style.lineHeight = e.target.value;
+  $(".mainTopText").style.lineHeight = e.target.value;
+  $(".mainBottomText").style.lineHeight = e.target.value;
 });
 
 //boton imagen
 
 $("#buttonImage").addEventListener("click", (e) => {
-  $(".asideImagen").style.display = "block";
+  $(".asideImagen").style.display = "flex";
+  $(".buttonClosePanel").style.display = "block";
+  $(".asideTexto").style.display = "none";
 });
 
 //boton texto
 $("#buttonTexto").addEventListener("click", (e) => {
   $(".asideTexto").style.display = "block";
+  $(".buttonClosePanel").style.display = "block";
 });
 //boton de cierre de paneles imagen y texto
-$("#buttonClosePanelImage").addEventListener("click", (e) => {
+$("#buttonClosePanel").addEventListener("click", (e) => {
   $(".asideImagen").style.display = "none";
+  $(".asideTexto").style.display = "none";
+  // $(".buttonClosePanel").classList.toggle("hidden");
+  $(".buttonClosePanel").style.display = "none";
 });
 
-$("#buttonClosePanelText").addEventListener("click", (e) => {
-  $(".asideTexto").style.display = "none";
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const query = window.matchMedia("(min-width: 1024px)");
 
-//toogle de paneles en mq 768px
-// $(".buttonImage").addEventListener("click", () => {
-//   $(".asideTexto").classList.toggle("asideImagen");
-// });
+  const updateImagePanel = () => {
+    const isDesktop = query.matches;
+    document.getElementById("asideTexto").style.width = "0";
+    document.getElementById("asideImagen").style.width = isDesktop
+      ? "30%"
+      : "100%";
+      document.getElementById("buttonClosePanel").style.display = isDesktop
+      ? "none"
+      : "block";
+    //  $("#buttonClosePanel").style.display = "none";
+  };
 
-$(".buttonImage").addEventListener("click", () => {
-  $(".asideTexto").style.display = "none";
+  const updateTextPanel = () => {
+    const isDesktop = query.matches;
+
+    document.getElementById("asideImagen").style.width = "0";
+    document.getElementById("asideTexto").style.width = isDesktop
+      ? "30%"
+      : "100%";
+      document.getElementById("buttonClosePanel").style.display = isDesktop
+      ? "none"
+      : "block";
+    //  $("#buttonClosePanel").style.display = "none";
+  };
+
+  document
+    .getElementById("buttonImage")
+    .addEventListener("click", updateImagePanel);
+  document
+    .getElementById("buttonTexto")
+    .addEventListener("click", updateTextPanel);
 });
 
 //boton de descarga
@@ -211,4 +242,3 @@ $(".change-theme").addEventListener("click", () => {
   $(".dark").classList.toggle("hidden");
   $(".light").classList.toggle("hidden");
 });
-
