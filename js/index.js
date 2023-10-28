@@ -183,33 +183,29 @@ $("#buttonClosePanel").addEventListener("click", (e) => {
   // $(".buttonClosePanel").classList.toggle("hidden");
   $(".buttonClosePanel").style.display = "none";
 });
-
+//panel en 1024px
 document.addEventListener("DOMContentLoaded", () => {
   const query = window.matchMedia("(min-width: 1024px)");
-
   const updateImagePanel = () => {
     const isDesktop = query.matches;
     document.getElementById("asideTexto").style.width = "0";
     document.getElementById("asideImagen").style.width = isDesktop
       ? "30%"
       : "100%";
-      document.getElementById("buttonClosePanel").style.display = isDesktop
+    document.getElementById("buttonClosePanel").style.display = isDesktop
       ? "none"
       : "block";
-    //  $("#buttonClosePanel").style.display = "none";
   };
 
   const updateTextPanel = () => {
     const isDesktop = query.matches;
-
     document.getElementById("asideImagen").style.width = "0";
     document.getElementById("asideTexto").style.width = isDesktop
       ? "30%"
       : "100%";
-      document.getElementById("buttonClosePanel").style.display = isDesktop
+    document.getElementById("buttonClosePanel").style.display = isDesktop
       ? "none"
       : "block";
-    //  $("#buttonClosePanel").style.display = "none";
   };
 
   document
@@ -228,6 +224,7 @@ const downloadImage = () => {
   });
 };
 $("#download").addEventListener("click", downloadImage);
+
 //modo oscuro
 $(".change-theme").addEventListener("click", () => {
   const currentTheme = $("body").getAttribute("data-theme");
