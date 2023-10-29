@@ -180,7 +180,6 @@ $("#buttonTexto").addEventListener("click", (e) => {
 $("#buttonClosePanel").addEventListener("click", (e) => {
   $(".asideImagen").style.display = "none";
   $(".asideTexto").style.display = "none";
-  // $(".buttonClosePanel").classList.toggle("hidden");
   $(".buttonClosePanel").style.display = "none";
 });
 //panel en 1024px
@@ -188,32 +187,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const query = window.matchMedia("(min-width: 1024px)");
   const updateImagePanel = () => {
     const isDesktop = query.matches;
-    document.getElementById("asideTexto").style.width = "0";
-    document.getElementById("asideImagen").style.width = isDesktop
-      ? "30%"
-      : "100%";
-    document.getElementById("buttonClosePanel").style.display = isDesktop
-      ? "none"
-      : "block";
+    $(".asideTexto").style.width = "0";
+    $(".asideImagen").style.width = isDesktop ? "30%" : "100%";
+    $("#buttonClosePanel").style.display = isDesktop ? "none" : "block";
   };
 
   const updateTextPanel = () => {
     const isDesktop = query.matches;
-    document.getElementById("asideImagen").style.width = "0";
-    document.getElementById("asideTexto").style.width = isDesktop
-      ? "30%"
-      : "100%";
-    document.getElementById("buttonClosePanel").style.display = isDesktop
-      ? "none"
-      : "block";
+    $(".asideImagen").style.width = "0";
+    $(".asideTexto").style.width = isDesktop ? "30%" : "100%";
+    $("#buttonClosePanel").style.display = isDesktop ? "none" : "block";
   };
 
-  document
-    .getElementById("buttonImage")
-    .addEventListener("click", updateImagePanel);
-  document
-    .getElementById("buttonTexto")
-    .addEventListener("click", updateTextPanel);
+  $("#buttonImage").addEventListener("click", updateImagePanel);
+  $("#buttonTexto").addEventListener("click", updateTextPanel);
 });
 
 //boton de descarga
