@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Generador de Memes</title>
     <link rel="stylesheet" href="css/style.css" />
     <!-- download image -->
     <script
@@ -26,12 +26,11 @@
     <div class="containerGeneral">
       <header class="header">
         <h1 class="header_titulo">Generador de Memes</h1>
-
         <div class="header_button">
           <button class="header__boton buttonImage" id="buttonImage">
             <i class="fa-regular fa-image"></i>Imagen
           </button>
-          <button class="header__boton buttonTexto" id="buttonTexto">
+          <button class="header__boton buttonText" id="buttonText">
             <i class="fa-solid fa-font"></i>texto
           </button>
           <button class="header__boton change-theme">
@@ -49,7 +48,7 @@
         <div class="mainTopText" id="mainTopText">
           <p class="paragraphTop paragraphColorTop">TOP TEXT</p>
         </div>
-        <div class="mainImagen" id="mainImagen"></div>
+        <div class="mainImage" id="mainImage"></div>
         <div class="mainBottomText" id="mainBottomText">
           <p class="paragraphBottom paragraphColorBottom">BOTTOM TEXT</p>
         </div>
@@ -64,11 +63,11 @@
       </main>
     </div>
     <!-- seccion panel imagen -->
-    <aside class="asidePaneles">
+    <aside class="asidePanels">
       <button class="buttonClosePanel hidden" id="buttonClosePanel">
         &times;
       </button>
-      <div class="asideImagen" id="asideImagen">
+      <div class="asideImage" id="asideImage">
         <h2 class="titleImage">IMAGEN</h2>
         <!-- url de imagen -->
         <div class="conteinerUrl">
@@ -76,10 +75,10 @@
           <input type="text" name="url" id="urlImage" class="inputs" />
         </div>
         <!-- fondo de imagen -->
-        <div class="selectFondo">
+        <div>
           <h3>FONDO</h3>
           <input type="color" name="fondo" id="fondoImagen" class="inputs" />
-          <select name="" id="mixFilters">
+          <select name="filtersMix" id="mixFilters">
             <option value="unset">Ninguno</option>
             <option value="lighten">Aclarar</option>
             <option value="darken">Oscurecer</option>
@@ -89,7 +88,7 @@
           </select>
         </div>
         <!-- FILTROS -->
-        <div class="conteinerFiltros">
+        <div class="conteinerFilters">
           <h3>FILTROS</h3>
           <div class="inputs">
             <label for="brightness">BRILLO</label>
@@ -203,7 +202,7 @@
         <button id="resetFilters" class="inputs">Reset Filtros</button>
       </div>
       <!-- seccion panel texto-->
-      <div class="asideTexto" id="asideTexto">
+      <div class="asideText" id="asideText">
         <h2 class="titleImage">TEXTO</h2>
         <div class="textSupeInf">
           <h3>SUPERIOR</h3>
@@ -227,12 +226,8 @@
         </div>
         <h3>FUENTES</h3>
         <select name="" id="font" class="inputs">
-          <option
-            value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
-          >
-            Selecciona
-          </option>
-          <option value="Arial, Helvetica, sans-serif">Arial</option>
+          <option value="Open Sans">Selecciona</option>
+          <option value="Arial">Arial</option>
           <option value="Arial Black">Arial Black</option>
           <option value="American Typewriter">American Typewriter</option>
           <option value="Andale Momo">Andale Momo</option>

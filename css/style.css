@@ -34,8 +34,10 @@ body {
   display: none;
 }
 
-h2,h3,label{
-  color: var(--font-color-primary)
+h2,
+h3,
+label {
+  color: var(--font-color-primary);
 }
 
 @media screen and (min-width: 320px) {
@@ -129,7 +131,7 @@ h2,h3,label{
     white-space: normal;
   }
 
-  .mainImagen {
+  .mainImage {
     background-color: black;
     height: 250px;
     background-size: cover;
@@ -144,14 +146,14 @@ h2,h3,label{
     color: var(--font-color-secondary);
     padding: 10px;
   }
-  .asidePaneles {
+  .asidePanels {
     display: flex;
     flex-direction: column;
     height: auto;
     width: 100%;
   }
-  .asideImagen,
-  .asideTexto {
+  .asideImage,
+  .asideText {
     background-color: var(--background-secondary);
     width: 100%;
     height: 100vh;
@@ -180,7 +182,7 @@ h2,h3,label{
     z-index: 3;
     top: 0;
   }
-  .conteinerFiltros {
+  .conteinerFilters {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -210,7 +212,7 @@ h2,h3,label{
     gap: 42px;
   }
 
-  .mainImagen {
+  .mainImage {
     height: 226px;
     top: 15px;
   }
@@ -226,7 +228,7 @@ h2,h3,label{
   .main {
     height: 515px;
   }
-  .mainImagen {
+  .mainImage {
     height: 380px;
   }
   .mainTopText {
@@ -245,10 +247,10 @@ h2,h3,label{
   .containerGeneral {
     width: 70%;
   }
-  .asidePaneles {
+  .asidePanels {
     width: 30%;
   }
-  .asideImagen {
+  .asideImage {
     display: flex;
     width: 30%;
   }

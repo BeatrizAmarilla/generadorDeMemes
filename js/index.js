@@ -6,21 +6,20 @@ const $ = (selector) => document.querySelector(selector);
 //panel imagen
 //url
 $("#urlImage").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundImage = `url(${e.target.value})`;
+  $(".mainImage").style.backgroundImage = `url(${e.target.value})`;
 });
 //fondo de imagen
 $("#fondoImagen").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundColor = e.target.value;
+  $(".mainImage").style.backgroundColor = e.target.value;
 });
 // //select mix-blend-mode
 $("#mixFilters").addEventListener("input", (e) => {
-  $(".mainImagen").style.backgroundBlendMode = e.target.value;
+  $(".mainImage").style.backgroundBlendMode = e.target.value;
 });
 
 // filtros
-
 const allFilters = () => {
-  $(".mainImagen").style.filter = `
+  $(".mainImage").style.filter = `
   hue-rotate(${$("#hueR").value}deg)
   saturate(${$("#saturate").value})
   invert(${$("#invert").value})
@@ -54,8 +53,9 @@ $("#resetFilters").addEventListener("click", () => {
   $("#hueR").value = "0";
   $("#saturate").value = "100";
   $("#invert").value = "0";
-  $("#mainImagen").style.filter = "none";
+  $("#mainImage").style.filter = "none";
 });
+
 //panel texto
 
 // texto superior
@@ -166,41 +166,43 @@ $("#interlineadoTexto").addEventListener("input", (e) => {
 //boton imagen
 
 $("#buttonImage").addEventListener("click", (e) => {
-  $(".asideImagen").style.display = "flex";
+  $(".asideImage").style.display = "flex";
   $(".buttonClosePanel").style.display = "block";
-  $(".asideTexto").style.display = "none";
+  $(".asideText").style.display = "none";
 });
 
 //boton texto
-$("#buttonTexto").addEventListener("click", (e) => {
-  $(".asideTexto").style.display = "block";
+$("#buttonText").addEventListener("click", (e) => {
+  $(".asideText").style.display = "block";
   $(".buttonClosePanel").style.display = "block";
 });
+
 //boton de cierre de paneles imagen y texto
 $("#buttonClosePanel").addEventListener("click", (e) => {
-  $(".asideImagen").style.display = "none";
-  $(".asideTexto").style.display = "none";
+  $(".asideImage").style.display = "none";
+  $(".asideText").style.display = "none";
   $(".buttonClosePanel").style.display = "none";
 });
+
 //panel en 1024px
 document.addEventListener("DOMContentLoaded", () => {
   const query = window.matchMedia("(min-width: 1024px)");
   const updateImagePanel = () => {
     const isDesktop = query.matches;
-    $(".asideTexto").style.width = "0";
-    $(".asideImagen").style.width = isDesktop ? "30%" : "100%";
+    $(".asideText").style.width = "0";
+    $(".asideImage").style.width = isDesktop ? "30%" : "100%";
     $("#buttonClosePanel").style.display = isDesktop ? "none" : "block";
   };
 
   const updateTextPanel = () => {
     const isDesktop = query.matches;
-    $(".asideImagen").style.width = "0";
-    $(".asideTexto").style.width = isDesktop ? "30%" : "100%";
+    $(".asideImage").style.width = "0";
+    $(".asideText").style.width = isDesktop ? "30%" : "100%";
     $("#buttonClosePanel").style.display = isDesktop ? "none" : "block";
   };
 
   $("#buttonImage").addEventListener("click", updateImagePanel);
-  $("#buttonTexto").addEventListener("click", updateTextPanel);
+  $("#buttonText").addEventListener("click", updateTextPanel);
 });
 
 //boton de descarga
